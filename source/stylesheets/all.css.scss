@@ -29,6 +29,10 @@ h1, h2, h3, h4, h5, h6 {
   @extend %reset;
 }
 
+a:visited {
+  color: rgb(0, 0, 238);
+}
+
 .container {
   max-width: 1170px;
   margin: 0 auto;
@@ -41,10 +45,18 @@ h1, h2, h3, h4, h5, h6 {
   padding: 15px;
 }
 
+h2 {
+  text-transform: uppercase;
+}
+
 h3 {
+
+  &.subline {
+    letter-spacing: 7px;
+  }
+
   color: rgba(0, 0, 0, .6);
   text-transform: uppercase;
-  letter-spacing: 7px;
 }
 
 .col-3 {
@@ -58,4 +70,12 @@ h3 {
 .image-container {
   display: block;
   margin-top: 40px;
+}
+
+.title-line {
+  margin-top: 20px;
+}
+
+.title-line + p {
+  margin-top: 0;
 }
