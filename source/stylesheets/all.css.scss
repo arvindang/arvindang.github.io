@@ -49,6 +49,10 @@ h3 {
 
 .col-3 {
   overflow: hidden;
+
+  @media screen and (min-width: 1170px){
+    overflow: visible;
+  }
 }
 
 .image-container {
