@@ -1,0 +1,53 @@
+@import url(http://fonts.googleapis.com/css?family=Enriqueta);
+
+@import 'normalize';
+
+%group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+%reset {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  font-size: 18px;
+}
+
+body {
+  font-family: 'Enriqueta', serif;
+  color: rgba(0, 0, 0, .7);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: helvetica, sans-serif;
+  color: rgba(0, 0, 0, .8);
+  @extend %reset;
+}
+
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  @extend %group;
+}
+
+.col {
+  max-width: 300px;
+  float: left;
+  padding: 15px;
+}
+
+h3 {
+  color: rgba(0, 0, 0, .6);
+  text-transform: uppercase;
+  letter-spacing: 7px;
+}
+
+.image-container {
+  display: block;
+  margin-top: 40px;
+}
