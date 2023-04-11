@@ -1,6 +1,7 @@
-@import url(http://fonts.googleapis.com/css?family=Enriqueta);
-
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import 'normalize';
+
+// sass source/stylesheets/all.css.scss build/stylesheets/all.css
 
 %group:after {
   content: "";
@@ -15,63 +16,89 @@
 
 html {
   -webkit-font-smoothing: antialiased;
-  font-size: 18px;
 }
 
 body {
-  font-family: 'Enriqueta', serif;
   color: rgba(0, 0, 0, .7);
-}
+  font-family: 'Source Code Pro', monospace;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 1.5rem;
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: helvetica, sans-serif;
-  color: rgba(0, 0, 0, .8);
-  @extend %reset;
-}
-
-a:visited {
-  color: rgb(0, 0, 238);
-}
-
-.container {
-  max-width: 1170px;
-  margin: 0 auto;
-  @extend %group;
-}
-
-.col {
-  max-width: 30%;
-  float: left;
-  padding: 15px;
-}
-
-h2 {
-  text-transform: uppercase;
-}
-
-h3 {
-  letter-spacing: 3px;
-  color: rgba(0, 0, 0, .6);
-  text-transform: uppercase;
-}
-
-.col-3 {
-  overflow: hidden;
-
-  @media screen and (min-width: 1170px){
-    overflow: visible;
+  @media (min-width: 960px) {
+    font-size: 18px;
+    line-height: 1.5;
   }
 }
 
-.image-container {
-  display: block;
-  margin-top: 40px;
+h1, h2, h3, h4, h5, h6 {
+  @extend %reset;
 }
 
-.title-line {
-  margin-top: 20px;
+a {
+  color: #FE4365;
+  display: inline-block;
+  text-decoration: none;
+
+  &:hover {
+    color: darken(#FE4365, 35%);
+    transition: color .25s ease-in-out, background-color .25s ease-in-out;
+    background-color: lighten(#FE4365, 32%);
+    border-radius: 8px;
+  }
+
+  &:visited {
+    color: #FE4365;
+  }
+
+  &:focus {
+    border: 1px solid #FE4365;
+  }
 }
 
-.title-line + p {
-  margin-top: 0;
+.wrapper {
+  display: grid;
+  // grid-template-columns: 1fr 2fr;
+  // justify-content: center;
+  max-width: 600px;
+  gap: 48px;
+}
+
+.container.wrapper {
+  grid-auto-flow: row;
+
+  @media (min-width: 960px) {
+    grid-auto-flow: column;
+    max-width: 960px;
+  }
+}
+
+header {
+  font-size: 1rem;
+
+  section.links {
+    margin-top: 3rem;
+
+    @media (max-width: 960px) {
+      display: none;
+    }
+  }
+
+  ul, li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  li {
+    margin-bottom: 1em;
+  }
+
+  nav {
+    margin-top: 3rem;
+    background-color: lighten(#FE4365, 32%);
+    border-radius: 1em;
+    padding: 1.5em;
+    text-align: center;
+  }
 }
