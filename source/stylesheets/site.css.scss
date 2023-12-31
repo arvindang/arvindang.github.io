@@ -28,6 +28,8 @@ $grid-max-width: 1600px;
 // IMPORTS
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+
 
 // GLOBAL
 body {
@@ -38,6 +40,16 @@ body {
   font-size: $default-font-size;
   line-height: 1.5;
   padding-top: $grid-gutter * 6;
+}
+
+h1 {
+  color: $highlight-color;
+  margin-bottom: 0;
+}
+
+h2 {
+  color: $secondary-font-color;
+  margin: 0;
 }
 
 h3 {
@@ -56,7 +68,7 @@ li {
 }
 
 .item-span-8-skip-1 {
-  @include grid-item(8, 2);
+  @include grid-item(8, 3);
 }
 
 a {
@@ -72,9 +84,10 @@ blockquote {
   margin: 0;
 
   .attribute {
-    color: rgba($highlight-color, 60%);
+    color: rgba($highlight-color, 0.6);
     font-size: 1rem;
     display: block;
+    margin-top: 1em;
   }
 }
 
@@ -92,17 +105,96 @@ header {
   }
 }
 
-main {
+.header-content {
+  @include grid-container;
+  grid-template-columns: repeat(8, 1fr); 
+  margin-bottom: $grid-gutter * 3;
+  display: grid; 
 
+  .logo, .item-span-1 { 
+    max-width: 100px;
+    grid-column: span 1; 
+  }
+
+  .item-span-4 { 
+    grid-column: span 4;
+  }
+
+  .social-links, .item-span-3 { 
+    grid-column: span 3; 
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex; 
+      justify-content: flex-end;
+    }
+
+    ul li {
+      display: flex; 
+      margin: 0; 
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 2em; 
+        background-color: $highlight-color;
+        padding: $grid-gutter; 
+        border-radius: 50%; 
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        margin-right: $grid-gutter; 
+        line-height: 1;
+        
+        &:hover {
+          color: darken(#fff, 20%);
+        }
+      }
+    }
+  }
+}
+
+// MAIN
+
+main {
   .large-quote {
     font-size: 2em;
+    padding-bottom: 1em;
+    margin-top: 1em;
   }
 
   .regular-quote {
     font-size: 1.5em;
+    margin-bottom: 2em;
+  }
+
+  section {
+    border-bottom: 1px solid rgba($highlight-color, 0.6);
+
+    &:last-of-type {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
   }
 }
 
 section {
   margin-bottom: $grid-gutter * 3;
+  padding-bottom: $grid-gutter * 3;
+}
+
+// FOOTER
+
+footer {
+  color: #fff;
+  background-color: rgba($highlight-color, 0.2);
+  font-size: .75em;
+  padding: 1em;
+  border-radius: .5em;
+  
+  a {
+    color: #fff;
+  }
 }
