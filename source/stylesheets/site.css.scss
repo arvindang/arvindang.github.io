@@ -4,11 +4,14 @@ $primary-font-color: #FFFFFF;
 $secondary-font-color: #68747B;
 $highlight-color: #8075FF;
 $default-font-size: 24px;
+$mobile-font-size: 16px;
 
 $grid-columns: 12;
 $grid-gutter: 16px;
 $grid-margin: 16px;
 $grid-max-width: 1600px;
+$breakpoint-md: 960px;
+$breakpoint-sm: 768px;
 
 // MIXINS
 @mixin grid-container {
@@ -19,10 +22,33 @@ $grid-max-width: 1600px;
   margin: 0 auto;
   padding: 0 $grid-margin;
   box-sizing: border-box;
+
+  // Medium devices
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: repeat(8, 1fr); 
+  }
+
+  // Small devices
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 @mixin grid-item($span: 1, $start-column: 1) {
   grid-column: $start-column / span $span;
+
+  // Medium devices
+  @media (max-width: $breakpoint-md) {
+
+    @if $span > 4 {
+      grid-column: $start-column / span 6;
+    }
+  }
+
+  // Small devices
+  @media (max-width: $breakpoint-sm) {
+    grid-column: span 4;
+  }
 }
 
 // IMPORTS
@@ -40,16 +66,29 @@ body {
   font-size: $default-font-size;
   line-height: 1.5;
   padding-top: $grid-gutter * 6;
+
+  // Small devices
+  @media (max-width: $breakpoint-sm) {
+    font-size: $mobile-font-size;
+  }
 }
 
 h1 {
   color: $highlight-color;
+  margin-top: 0;
   margin-bottom: 0;
 }
 
 h2 {
   color: $secondary-font-color;
   margin: 0;
+}
+
+h1, h2 {
+  // Small devices
+  @media (max-width: $breakpoint-sm) {
+    font-size: 2.5em;
+  }
 }
 
 h3 {
@@ -69,6 +108,16 @@ li {
 
 .item-span-8-skip-1 {
   @include grid-item(8, 3);
+
+  // Medium devices
+  @media (max-width: $breakpoint-md) {
+    @include grid-item(6, 2);
+  }
+
+  // Small devices
+  @media (max-width: $breakpoint-sm) {
+    @include grid-item(4, 1);
+  }
 }
 
 a {
@@ -94,14 +143,16 @@ blockquote {
 // HEADER
 
 header {
-  .logo {
-    max-width: 100px;
-  }
-
   font-size: .5em;
 
-  .header-content {
-    margin-bottom: $grid-gutter * 3;
+  .logo {
+    max-width: 100px;
+    display: block;
+
+    // // Small devices
+    // @media (max-width: $breakpoint-sm) {
+    //   max-width: 60px;
+    // }
   }
 }
 
@@ -110,10 +161,18 @@ header {
   grid-template-columns: repeat(8, 1fr); 
   margin-bottom: $grid-gutter * 3;
   display: grid; 
+  margin-left: 0;
+  justify-content: center;
+  align-items: center; 
 
   .logo, .item-span-1 { 
-    max-width: 100px;
+    max-width: 80px;
     grid-column: span 1; 
+
+    // Small devices
+    @media (max-width: $breakpoint-sm) {
+      max-width: 60px;
+    }
   }
 
   .item-span-4 { 
@@ -121,7 +180,13 @@ header {
   }
 
   .social-links, .item-span-3 { 
-    grid-column: span 3; 
+    grid-column: span 3;
+    width: 100%;
+
+    // Small devices
+    @media (max-width: $breakpoint-sm) {
+      grid-column: span 1;
+    }
 
     ul {
       list-style: none;
@@ -129,11 +194,16 @@ header {
       margin: 0;
       display: flex; 
       justify-content: flex-end;
+      width: 100%;
     }
 
     ul li {
       display: flex; 
       margin: 0; 
+
+      &:last-child a {
+        margin-right: 0;
+      }
 
       a {
         color: #fff;

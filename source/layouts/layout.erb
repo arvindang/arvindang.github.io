@@ -5,11 +5,20 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keywords" content="product, visual, ui, user, ux, design, designer, interface, experience, full stack, angel investor, portfolio, work, startup, senior, staff, ic, leader, mentor">
+    <meta name="keywords" content="product, visual, ui, user, ux, design, designer, interface, experience, full stack, angel investor, portfolio, work, startup, senior, staff, ic, leader, mentor, investor, front-end developer">
     <meta name="author" content="Arvin Dang">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DT8MBZGSF9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-DT8MBZGSF9');
+    </script>
     
-    
-    <!-- Use the title from a page's frontmatter if it has one -->
+    <!-- Middleman Frontmatter -->
     <title><%= current_page.data.title || "Middleman" %></title>
     <%= stylesheet_link_tag "site" %>
     <%= javascript_include_tag "site" %>
