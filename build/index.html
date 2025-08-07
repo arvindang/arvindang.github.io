@@ -19,130 +19,282 @@
     </script>
     
     <!-- Middleman Frontmatter -->
-    <title>Arvin Dang, Designer, Investor, Instructor</title>
+    <title>Middleman</title>
     <link href="/stylesheets/site.css" rel="stylesheet" />
     <script src="/javascripts/site.js"></script>
   </head>
   <body>
-    <header class="container">
-  <section class="header-content item-span-8-skip-1">
-    <div class="item-span-1">
-      <img src="images/AD_Logo.png" alt="Initials A.D. in logo form" class="logo">
-    </div>
-    <div class="item-span-4">  
-      <h1>Arvin Dang</h1>
-      <h2>Product Designer • Angel Investor • Instructor</h2>
-    </div>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Arvin Dang - Product Designer, Full-Stack Developer, Mentor, and Instructor. Creating thoughtful digital experiences with a focus on clarity and craft.">
+    <meta name="keywords" content="product design, full-stack development, Ruby on Rails, UI/UX, design systems, mentorship, Northwestern University">
+    <meta name="author" content="Arvin Dang">
+    
+    <title>Arvin Dang - Product Designer & Developer</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RFJ0PQ4JTJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RFJ0PQ4JTJ');
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link href="/stylesheets/site.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Arvin Dang</h1>
+            <p class="hero-subtitle">
+                <span class="dynamic-text">Product Lead</span>
+                <span class="subtitle-static">Crafting thoughtful and simple solutions.</span>
+            </p>
+            <nav class="hero-nav">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#teaching">Teaching</a>
+                <a href="writing.html">Writing</a>
+                <a href="#connect">Connect</a>
+            </nav>
+        </div>
+    </header>
 
-    <aside class="social-links item-span-3">
-      <ul>
-        <li>
-          <a href="https://www.linkedin.com/in/arvindang/">
-            <i class="bi bi-linkedin" alt="Linkedin link"></i>
-            </a>
-          </li>
-        <li>
-          <a href="https://github.com/arvindang">
-            <i class="bi bi-github" alt="Github link"></i>
-          </a>
-        </li>
-        <li>
-          <a href="mailto:hello@arvindang.com">
-            <i class="bi bi-envelope-fill" alt="email me"></i>
-          </a>
-        </li>
-      </ul>
-    </aside>
-  </section>
-</header>
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="glass-card">
+                <h2>Jack of All Trades, Master of Product</h2>
+                <p class="lead">
+                    Currently Lead Designer at <a href="https://enduvo.com" target="_blank" rel="noopener">Enduvo</a>, 
+                    I bring twelve years of experience spanning product design, front-end development, 
+                    and Ruby on Rails engineering. I believe the best digital products emerge from a deep 
+                    understanding of both design principles and technical implementation.
+                </p>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Design</h3>
+                        <ul>
+                            <li>Product Strategy</li>
+                            <li>Design Systems</li>
+                            <li>User Research</li>
+                            <li>Interaction Design</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Development</h3>
+                        <ul>
+                            <li>Ruby on Rails</li>
+                            <li>JavaScript/TypeScript</li>
+                            <li>React & Vue</li>
+                            <li>HTML/CSS</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Leadership</h3>
+                        <ul>
+                            <li>Mentorship</li>
+                            <li>Team Building</li>
+                            <li>Strategic Planning</li>
+                            <li>Teaching</li>
+                        </ul>
+                    </div>
+                </div>
 
-<main class="container">
-  <section class="item-span-8-skip-1">
-    <blockquote class="large-quote">
-      “A good designer can organize chaos. A great designer can eliminate chaos.”
-      <span class="attribute">— Michael Wong</span>
-    </blockquote>
-  </section>
+                <blockquote class="philosophy-quote">
+                    <p>"Whoever best describes the problem, solves it."</p>
+                    <cite>— Dan Roam</cite>
+                </blockquote>
+            </div>
+        </div>
+    </section>
 
-  <section class="item-span-8-skip-1">
-    <h3>Design Approach</h3>
-    <blockquote class="regular-quote">
-      “Whoever best describes the problem, solves it.”
-      <span class="attribute">— Dan Roam</span>
-    </blockquote>
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+        <div class="container">
+            <h2>Personal Projects</h2>
+            <p class="section-intro">Side projects where I explore ideas at the intersection of design and technology</p>
+            
+            <div class="projects-grid">
+                <article class="project-card glass-card">
+                    <div class="project-header">
+                        <h3>Mantras.guru</h3>
+                        <a href="https://mantras.guru" target="_blank" rel="noopener" class="project-link">Visit →</a>
+                    </div>
+                    <p>A multilingual collection of spiritual mantras from Hindu and Buddhist traditions. 
+                    Features elegant typography, language selection, and a focus on readability for meditation practice.</p>
+                    <div class="project-tags">
+                        <span>Ruby on Rails</span>
+                        <span>i18n</span>
+                        <span>Typography</span>
+                    </div>
+                </article>
 
-    <p>
-      In my twelve plus year journey as a product designer, I've navigated the full spectrum, from front-end and Rails development to research, design strategy, and finally to interaction and product design. This path has ingrained in me a philosophy centered on clarity and the importance of active listening.
-    </p>
+                <article class="project-card glass-card">
+                    <div class="project-header">
+                        <h3>Cadence.cards</h3>
+                        <a href="https://cadence.cards" target="_blank" rel="noopener" class="project-link">Visit →</a>
+                    </div>
+                    <p>A simplified spaced repetition learning platform. Built as an alternative to complex tools 
+                    like Anki, focusing on ease of use with Markdown support and intelligent scheduling.</p>
+                    <div class="project-tags">
+                        <span>Rails</span>
+                        <span>Learning Science</span>
+                        <span>SaaS</span>
+                    </div>
+                </article>
 
-    <p>
-      Design Principals:
+                <article class="project-card glass-card">
+                    <div class="project-header">
+                        <h3>Cerca.me</h3>
+                        <a href="https://cerca.me" target="_blank" rel="noopener" class="project-link">Visit →</a>
+                    </div>
+                    <p>A mobile app for discovering and organizing places of interest. Automatically categorizes 
+                    saved locations by city and neighborhood with proximity-based sorting.</p>
+                    <div class="project-tags">
+                        <span>Mobile Design</span>
+                        <span>Geolocation</span>
+                        <span>iOS</span>
+                    </div>
+                </article>
 
-      <ol>
-        <li>
-          <strong>Immerse Yourself:</strong> Dive deep into the problem space. Understanding is the bedrock of innovation.
-        </li>
-        <li>
-          <strong>Look Beyond the First Solution: </strong> Good design is iterative. The first solution is rarely the best.
-        </li>
-        <li>
-          <strong>Change Perspectives:</strong> The goal is to bring coherence and clarity at both the macro and micro levels, ensuring that the overall vision and the intricate details complement each other in the final solution.
-        </li>
-      </ol>
-    </p>
+                <article class="project-card glass-card coming-soon">
+                    <div class="project-header">
+                        <h3>More Coming Soon</h3>
+                    </div>
+                    <p>Currently working on new projects exploring AI-assisted design tools and 
+                    creative coding experiments.</p>
+                </article>
+            </div>
+        </div>
+    </section>
 
-    <p>
-      I’ve had the pleasure to work with <a href="">TXI</a>, <a href="">Salesforce</a>, <a href="">Techstars Chicago</a> and <a href="">The Starter League</a>.
-    </p>
-  </section>
+    <!-- Experience Section -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <h2>Experience</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item glass-card">
+                    <div class="timeline-date">2022 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Lead Designer</h3>
+                        <p class="timeline-company">Enduvo</p>
+                        <p>Leading design for VR/AR training platforms, establishing design systems, 
+                        and bridging design and engineering teams.</p>
+                    </div>
+                </div>
 
-  <section class="item-span-8-skip-1">
-    <h3>Investment Philosophy</h3>
-    <blockquote class="regular-quote">
-      “Think about it this way: If you had to launch your business in two weeks, what would you cut out?”
-      <span class="attribute">– Jason Fried</span>
-    </blockquote>
+                <div class="timeline-item glass-card">
+                    <div class="timeline-date">2019 - Present</div>
+                    <div class="timeline-content">
+                        <h3>Adjunct Lecturer</h3>
+                        <p class="timeline-company">Northwestern University</p>
+                        <p>Teaching DSGN 241: Product Design Fundamentals. Helping students transform 
+                        ideas into testable prototypes.</p>
+                    </div>
+                </div>
 
-    <p>My investment journey is deeply rooted in my experiences with early-stage companies, first as part of my own growth in a startup environment and then through active engagement in the startup community in Chicago and Techstars.</p>
+                <div class="timeline-item glass-card">
+                    <div class="timeline-date">2016 - 2022</div>
+                    <div class="timeline-content">
+                        <h3>Senior Product Designer</h3>
+                        <p class="timeline-company">TXI (Techstars)</p>
+                        <p>Designed and developed products for startups and enterprises. 
+                        Mentored teams through Techstars Chicago accelerator.</p>
+                    </div>
+                </div>
 
-    <p>My philosophy blends a passion for practical, real-world problem-solving with a commitment to sustainable, impactful growth. I focus on investing in companies that prioritize steady progress and customer-centric solutions.</p>
+                <div class="timeline-item glass-card">
+                    <div class="timeline-date">2014 - 2016</div>
+                    <div class="timeline-content">
+                        <h3>Product Designer & Developer</h3>
+                        <p class="timeline-company">Salesforce Ignite</p>
+                        <p>Built design systems and developed front-end solutions for 
+                        Salesforce's innovation lab.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <p>
-      Investment Principals:
-      <ol>
-        <li><strong>Practical Solutions for Real-World Challenges:</strong> My investment strategy is deeply rooted in practicality. I focus on startups that are solving tangible, real-world problems with achievable and realistic solutions. I steer clear of ventures that seem overly ambitious or speculative in nature.</li>
-        <li><strong>Customer-Centric Approach:</strong> I prioritize companies that place a strong emphasis on customer service and have a dedicated customer-oriented approach. I value organizations that prioritize listening to their customers over promoting themselves.</li>
-        <li><strong>Capability and Depth in Small Teams:</strong> I have a preference for working with founders who demonstrate a rich blend of deep domain expertise and strong product development skills. My ideal teams are efficient and compact, yet rich in experience and capability.</li>
-      </ol>
-    </p>
-  </section>
+    <!-- Teaching Section -->
+    <section id="teaching" class="section teaching">
+        <div class="container">
+            <div class="glass-card">
+                <h2>Teaching Philosophy</h2>
+                
+                <blockquote class="philosophy-quote">
+                    <p>"To teach a thing is to learn it twice."</p>
+                    <cite>— Joseph Joubert</cite>
+                </blockquote>
 
-    <section class="item-span-8-skip-1">
-      <h3>Teaching Methodology</h3>
-      <blockquote class="regular-quote">“To teach a thing, is to learn it twice.”
-        <span class="attribute">– Raghu Betina</span>
-      </blockquote>
+                <p class="lead">
+                    At Northwestern University, I teach <strong>DSGN 241: Product Design Fundamentals</strong>, 
+                    a hands-on course that bridges the gap between design theory and practical implementation.
+                </p>
 
-      <p>Recognizing a gap in practical skills in design education, I've developed a hands-on product design course. This program is more than just theoretical learning; it's about applying these concepts in real-world scenarios.</p>
+                <div class="course-outcomes">
+                    <h3>Course Outcomes</h3>
+                    <ul>
+                        <li><strong>Concept to Wireframes:</strong> Transform app ideas into detailed, testable prototypes</li>
+                        <li><strong>Collaborative Skills:</strong> Work effectively with designers and engineers</li>
+                        <li><strong>Foundation for Development:</strong> Create solid groundwork for user testing and implementation</li>
+                    </ul>
+                </div>
 
-      <p>
-        Course Outcomes:
+                <a href="../assets/NW_Syllabus.pdf" class="button" target="_blank">View Course Syllabus</a>
+            </div>
+        </div>
+    </section>
 
-        <ol>
-          <li><strong>From Concept to Wireframes:</strong> Learn to transform app ideas from broad concepts into detailed, testable prototypes.</li>
-          <li><strong>Collaborative Skills:</strong> Gain the ability to effectively work with both designers and engineers.</li>
-          <li><strong>Foundation for Testing and Development:</strong> Establish a solid base for further user testing and development.</li>
-        </ol>
-      </p>
+    <!-- Connect Section -->
+    <section id="connect" class="section connect">
+        <div class="container">
+            <div class="glass-card">
+                <h2>Let's Connect</h2>
+                <p class="lead">Whether you're interested in design, development, or just want to chat about ideas, 
+                I'd love to hear from you.</p>
+                
+                <div class="connect-links">
+                    <a href="mailto:hello@arvindang.com" class="connect-link">
+                        <span class="icon">✉</span>
+                        hello@arvindang.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/arvindang/" target="_blank" rel="noopener" class="connect-link">
+                        <span class="icon">💼</span>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/arvindang" target="_blank" rel="noopener" class="connect-link">
+                        <span class="icon">⚡</span>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-      <p>
-        My program is currently taught at <a href="https://design.northwestern.edu">Northwestern University</a>. I also hold private workshops for <a href="https://www.kellogg.northwestern.edu/programs/full-time-mba/mmm-program.aspx">Northwestern University’s MMM Program</a> and <a href="https://www.chicagobooth.edu">The University of Chicago, Booth MBA</a> covering design topics ranging from research to design and development.
-      </p>
-  </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Crafted with care in Chicago • © 2024 Arvin Dang</p>
+        </div>
+    </footer>
 
-  <footer class="item-span-8-skip-1">
-    Hand coded with ♥ in Chicago, using <a href="https://middlemanapp.com">Middleman</a>, hosted by <a href="https://github.com/arvindang/arvindang.github.io">Github</a>.
-  </footer>
-</main>
+    <script src="/javascripts/site.js"></script>
+</body>
+</html>
   </body>
 </html>

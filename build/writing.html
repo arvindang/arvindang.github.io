@@ -1,0 +1,286 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="product, visual, ui, user, ux, design, designer, interface, experience, full stack, angel investor, portfolio, work, startup, senior, staff, ic, leader, mentor, investor, front-end developer">
+    <meta name="author" content="Arvin Dang">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DT8MBZGSF9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-DT8MBZGSF9');
+    </script>
+    
+    <!-- Middleman Frontmatter -->
+    <title>Middleman</title>
+    <link href="/stylesheets/site.css" rel="stylesheet" />
+    <script src="/javascripts/site.js"></script>
+  </head>
+  <body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thoughts and observations on design, technology, and product development by Arvin Dang">
+    <meta name="author" content="Arvin Dang">
+    
+    <title>Writing - Arvin Dang</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RFJ0PQ4JTJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RFJ0PQ4JTJ');
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link href="/stylesheets/site.css" rel="stylesheet" />
+    <style>
+        /* Writing-specific styles */
+        .writing-header {
+            padding: var(--spacing-2xl) 0 var(--spacing-xl);
+            text-align: center;
+            background: var(--gradient-hero);
+        }
+        
+        .writing-nav {
+            position: fixed;
+            top: var(--spacing-md);
+            left: var(--spacing-md);
+            z-index: 100;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--glass-blur));
+            border-radius: var(--radius-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            transform: translateX(-4px);
+            background: rgba(212, 130, 108, 0.1);
+            text-decoration: none;
+        }
+        
+        .writing-intro {
+            max-width: 600px;
+            margin: 0 auto var(--spacing-xl);
+            text-align: center;
+            color: var(--color-gray);
+        }
+        
+        .writing-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .writing-item {
+            margin-bottom: var(--spacing-lg);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .writing-item:nth-child(1) { animation-delay: 0.1s; }
+        .writing-item:nth-child(2) { animation-delay: 0.2s; }
+        .writing-item:nth-child(3) { animation-delay: 0.3s; }
+        .writing-item:nth-child(4) { animation-delay: 0.4s; }
+        .writing-item:nth-child(5) { animation-delay: 0.5s; }
+        
+        .writing-date {
+            font-size: 0.875rem;
+            color: var(--color-terracotta);
+            font-weight: 500;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .writing-title {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-dark);
+        }
+        
+        .writing-content {
+            color: var(--color-gray);
+            line-height: 1.7;
+        }
+        
+        .writing-content strong {
+            color: var(--color-dark);
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--color-terracotta-light), transparent);
+            margin: var(--spacing-lg) 0;
+            opacity: 0.3;
+        }
+        
+        @media (max-width: 768px) {
+            .writing-nav {
+                position: static;
+                padding: var(--spacing-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="writing-nav">
+        <a href="index.html" class="back-link">
+            <span>←</span>
+            <span>Back to Portfolio</span>
+        </a>
+    </nav>
+
+    <!-- Header -->
+    <header class="writing-header">
+        <div class="container">
+            <h1>Writing</h1>
+            <p class="writing-intro">
+                Short thoughts on design, technology, and the craft of building products. 
+                Observations from the intersection of creativity and code.
+            </p>
+        </div>
+    </header>
+
+    <!-- Writing List -->
+    <main class="section">
+        <div class="container">
+            <div class="writing-list">
+                
+                <!-- Entry 1 -->
+                <article class="writing-item glass-card">
+                    <div class="writing-date">December 2024</div>
+                    <h2 class="writing-title">On Simplicity</h2>
+                    <div class="writing-content">
+                        <p>
+                            The best interfaces disappear. Not literally—though sometimes that helps—but cognitively. 
+                            They become invisible extensions of intent. When someone uses your product and says 
+                            "it just works," that's the highest compliment.
+                        </p>
+                        <p>
+                            <strong>Simplicity isn't minimalism.</strong> It's clarity of purpose. A dense dashboard 
+                            can be simple if every element serves the user's goal. An empty screen can be complex 
+                            if it leaves users guessing.
+                        </p>
+                    </div>
+                </article>
+
+                <div class="divider"></div>
+
+                <!-- Entry 2 -->
+                <article class="writing-item glass-card">
+                    <div class="writing-date">November 2024</div>
+                    <h2 class="writing-title">The Designer Who Codes</h2>
+                    <div class="writing-content">
+                        <p>
+                            There's a gap between intention and implementation that no amount of documentation can bridge. 
+                            The designer who codes doesn't just hand off specs—they understand the material they're shaping.
+                        </p>
+                        <p>
+                            <strong>Code is a design tool.</strong> Not the only one, but an essential one. Like understanding 
+                            paper grain for print design or acoustic properties for architecture. You design differently 
+                            when you know how the thing will be built.
+                        </p>
+                    </div>
+                </article>
+
+                <div class="divider"></div>
+
+                <!-- Entry 3 -->
+                <article class="writing-item glass-card">
+                    <div class="writing-date">October 2024</div>
+                    <h2 class="writing-title">Teaching as Learning</h2>
+                    <div class="writing-content">
+                        <p>
+                            Every semester at Northwestern, I'm reminded that teaching is the best way to stay sharp. 
+                            Students ask questions you stopped asking. They see problems you've learned to ignore.
+                        </p>
+                        <p>
+                            <strong>Fresh eyes are a superpower.</strong> When a student asks "why does it work this way?" 
+                            and you realize you don't have a good answer, that's where innovation lives.
+                        </p>
+                    </div>
+                </article>
+
+                <div class="divider"></div>
+
+                <!-- Entry 4 -->
+                <article class="writing-item glass-card">
+                    <div class="writing-date">September 2024</div>
+                    <h2 class="writing-title">Side Projects as R&D</h2>
+                    <div class="writing-content">
+                        <p>
+                            Mantras.guru taught me about internationalization. Cadence.cards about spaced repetition algorithms. 
+                            Cerca.me about location-based services. None of these were the goal—they were discoveries along the way.
+                        </p>
+                        <p>
+                            <strong>Build to learn, not to launch.</strong> The pressure to ship kills experimentation. 
+                            Some of my best professional work came from techniques discovered in "failed" side projects.
+                        </p>
+                    </div>
+                </article>
+
+                <div class="divider"></div>
+
+                <!-- Entry 5 -->
+                <article class="writing-item glass-card">
+                    <div class="writing-date">August 2024</div>
+                    <h2 class="writing-title">The Terracotta Principle</h2>
+                    <div class="writing-content">
+                        <p>
+                            Terracotta—earthen, warm, grounded. Not the loudest color in the palette, but the one 
+                            that makes others sing. In design, as in teams, sometimes the best contribution is 
+                            creating space for others to shine.
+                        </p>
+                        <p>
+                            <strong>Support is a form of leadership.</strong> The best products come from teams where 
+                            everyone feels empowered to do their best work. Be the terracotta—the foundation that 
+                            lets brilliance emerge.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Thoughts captured in Chicago • © 2025 Arvin Dang</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth fade-in for writing items as they load
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.writing-item');
+            items.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+    </script>
+</body>
+</html>
+  </body>
+</html>
