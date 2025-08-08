@@ -19,17 +19,18 @@ This is a personal portfolio website for Arvin Dang built with Middleman, a Ruby
 # Install dependencies
 bundle install
 
-# Start development server
+# Start development server (local development)
 bundle exec middleman server
 
-# Build static site
+# Build static site locally (for testing)
 bundle exec middleman build
 
-# Deploy to GitHub Pages (builds to root directory)
-bundle exec middleman build
+# Deploy to GitHub Pages (automatic via GitHub Actions)
+# Simply push your changes to main branch:
 git add .
-git commit -m "Build site"
-git push origin master
+git commit -m "Your commit message"
+git push origin main
+# GitHub Actions will automatically build and deploy the site
 ```
 
 **IMPORTANT:** Always use `bundle exec` with Middleman commands to ensure proper gem version management.
@@ -49,11 +50,11 @@ The site uses Middleman's standard directory structure:
 
 ## Key Architecture Decisions
 
-1. **Dual HTML Structure**: The site maintains both `source/index.html.erb` (source template) and `index.html` (built file) in the root directory. The root `index.html` is the deployed version for GitHub Pages.
+1. **Source Structure**: All source files are in the `source/` directory following Middleman conventions. The site uses ERB templates that are processed during build.
 
-2. **Build Directory**: The `build/` directory contains compiled assets (CSS, JS, images) and is committed to the repository for GitHub Pages deployment.
+2. **Build Directory**: The `build/` directory contains compiled assets and is git-ignored. It's automatically generated during deployment via GitHub Actions.
 
-3. **GitHub Pages Deployment**: The site deploys directly from the master branch root directory, requiring built files to be committed.
+3. **GitHub Pages Deployment**: The site uses GitHub Actions for automatic deployment. Push to main branch triggers a build and deploy workflow, ensuring clean separation of source and built files.
 
 ## Important Files
 

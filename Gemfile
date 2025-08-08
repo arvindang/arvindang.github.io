@@ -7,3 +7,5 @@ gem 'middleman-autoprefixer'
 
 gem 'bigdecimal'
 gem 'mutex_m'
+gem 'csv'
+gem 'base64'

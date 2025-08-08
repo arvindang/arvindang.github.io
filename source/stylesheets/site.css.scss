@@ -372,8 +372,9 @@ a:hover {
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: calc(-1 * var(--spacing-lg) - 5px);
-    top: var(--spacing-md);
+    left: calc(-1 * var(--spacing-lg) - 8px);
+    top: 50%;
+    transform: translateY(-50%);
     width: 12px;
     height: 12px;
     background: var(--color-terracotta);

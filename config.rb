@@ -40,7 +40,14 @@ page '/*.txt', layout: false
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 
-# configure :build do
-#   activate :minify_css
-#   activate :minify_javascript
-# end
+configure :build do
+  activate :minify_css
+  # Disabled JS minification due to Uglifier compatibility issues with modern JS
+  # activate :minify_javascript
+  activate :asset_hash
+  activate :relative_assets
+  set :relative_links, true
+end
+
+# GitHub Pages deployment configuration
+set :site_url, 'https://arv.in'
