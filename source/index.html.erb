@@ -1,86 +1,215 @@
-<header class="hero">
-    <div class="hero-background"></div>
-    <div class="hero-content">
-        <h1 class="hero-title">Arvin Dang</h1>
-        <p class="hero-subtitle">
-            <span class="dynamic-text">Product Lead</span>
-            <span class="subtitle-static">Crafting thoughtful and simple solutions.</span>
-        </p>
-        <nav class="hero-nav">
-            <a href="#about">About</a>
-            <a href="#teaching">Teaching</a>
+<!-- Navigation -->
+<nav class="nav" id="main-nav">
+    <div class="nav__inner">
+        <a href="/" class="nav__name">Arvin Dang</a>
+        <div class="nav__links">
             <a href="#projects">Projects</a>
             <a href="#experience">Experience</a>
-            <a href="writing.html">Writing</a>
+            <a href="#teaching">Teaching</a>
+
             <a href="#connect">Connect</a>
-        </nav>
+        </div>
     </div>
-</header>
+</nav>
 
-<!-- About Section -->
-<section id="about" class="section about">
+<!-- About -->
+<section class="section about" id="about">
     <div class="container">
-        <div class="glass-card">
-            <h2>Jack of All Trades, Master of Some</h2>
-            <p class="lead">
-                As the Lead Designer at <a href="https://enduvo.com" target="_blank" rel="noopener">Enduvo</a>, I bring twelve years of experience spanning product design, front-end development, and Ruby on Rails engineering. I thrive at the intersection of design and development - where creative vision meets technical execution.
-            </p>
-            
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Design</h3>
-                    <ul>
-                        <li>Product Strategy</li>
-                        <li>Design Systems</li>
-                        <li>User Research</li>
-                        <li>Interaction Design</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Development</h3>
-                    <ul>
-                        <li>Ruby on Rails</li>
-                        <li>HTML/CSS</li>
-                        <li>Swift/SwiftUI</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Leadership</h3>
-                    <ul>
-                        <li>Mentorship</li>
-                        <li>Team Building</li>
-                        <li>Strategic Planning</li>
-                        <li>Teaching</li>
-                    </ul>
-                </div>
-            </div>
+        <h1 class="about__title">Software Craftsman</h1>
+        <p class="lead about__lead">
+            I've loved building things with technology since I pirated Dreamweaver and Photoshop in the AOL days. If I could, I'd build physical things with my hands — but I do it with software instead. Currently Lead Designer at <a href="https://enduvo.com" target="_blank" rel="noopener">Enduvo</a> and Adjunct Lecturer at <a href="https://www.mccormick.northwestern.edu/" target="_blank" rel="noopener">Northwestern University</a>.
+        </p>
+        <blockquote class="quote">
+            <p>"Whoever best describes the problem, solves it."</p>
+            <cite>— Dan Roam</cite>
+        </blockquote>
+    </div>
+</section>
 
-            <blockquote class="philosophy-quote">
-                <p>"Whoever best describes the problem, solves it."</p>
-                <cite>— Dan Roam</cite>
-            </blockquote>
+<!-- Open Source Projects -->
+<section id="projects" class="section">
+    <div class="container">
+        <h2>Open Source</h2>
+        <p class="section-intro">Tools and libraries I build and maintain in the open.</p>
+
+        <div class="projects-grid">
+            <a href="https://arv.in/whiplash/" target="_blank" rel="noopener" class="project-card-link">
+            <article class="project-card">
+                <div class="project-card__image">
+                    <img src="assets/whiplash.png" alt="Whiplash" loading="lazy">
+                </div>
+                <div class="project-card__body">
+                    <h3 class="project-card__title">Whiplash</h3>
+                    <p class="project-card__description">A macOS menu bar utility for tracking developer tasks across concurrent contexts — terminal tabs, Claude Code sessions, and more.</p>
+                    <div class="project-card__tags">
+                        <span class="tag">Open Source</span>
+                    </div>
+                </div>
+            </article>
+            </a>
+
+            <a href="https://arv.in/murmur/" target="_blank" rel="noopener" class="project-card-link">
+            <article class="project-card">
+                <div class="project-card__image">
+                    <img src="assets/murmur.png" alt="Murmur" loading="lazy">
+                </div>
+                <div class="project-card__body">
+                    <h3 class="project-card__title">Murmur</h3>
+                    <p class="project-card__description">A macOS menu bar utility that reads text aloud with support for system voices and OpenAI TTS.</p>
+                    <div class="project-card__tags">
+                        <span class="tag">Open Source</span>
+                    </div>
+                </div>
+            </article>
+            </a>
+
+            <a href="https://arv.in/illustrative" target="_blank" rel="noopener" class="project-card-link">
+            <article class="project-card">
+                <div class="project-card__image">
+                    <img src="assets/illustrative.webp" alt="Illustrative.ai" loading="lazy">
+                </div>
+                <div class="project-card__body">
+                    <h3 class="project-card__title">Illustrative.ai</h3>
+                    <p class="project-card__description">An AI graphic novel engine that transforms public domain literature into stylistically consistent illustrated books using Gemini.</p>
+                    <div class="project-card__tags">
+                        <span class="tag">AI</span>
+                        <span class="tag">Open Source</span>
+                    </div>
+                </div>
+            </article>
+            </a>
+
+            <a href="https://github.com/arvindang/claude-code" target="_blank" rel="noopener" class="project-card-link">
+            <article class="project-card">
+                <div class="project-card__image">
+                    <img src="assets/claudecode.webp" alt="Claude Agents & Skills" loading="lazy">
+                </div>
+                <div class="project-card__body">
+                    <h3 class="project-card__title">Claude Agents &amp; Skills</h3>
+                    <p class="project-card__description">Custom agents and skills for Claude Code — automating design review, QA, deployment, and more.</p>
+                    <div class="project-card__tags">
+                        <span class="tag">Claude Code</span>
+                        <span class="tag">Agents</span>
+                    </div>
+                </div>
+            </article>
+            </a>
         </div>
     </div>
 </section>
 
-<!-- Teaching Section -->
-<section id="teaching" class="section teaching">
+<!-- More Projects -->
+<section class="section">
     <div class="container">
-        <div class="glass-card">
-            <h2>Teaching Philosophy</h2>
-            
-            <blockquote class="philosophy-quote">
+        <h2>More Projects</h2>
+        <p class="section-intro">Side projects and experiments — all live and ready to use.</p>
+
+        <div class="projects-grid">
+            <a href="https://apps.apple.com/us/app/japa-mala-mantra-108-count/id6759349555" target="_blank" rel="noopener" class="project-card-link">
+            <article class="project-card">
+                <div class="project-card__image">
+                    <img src="assets/japa-mala.png" alt="Japa Mala: Mantra & 108 Count" loading="lazy">
+                </div>
+                <div class="project-card__body">
+                    <h3 class="project-card__title">Japa Mala: Mantra &amp; 108 Count</h3>
+                    <p class="project-card__description">A beautiful iOS app for mantra meditation with 108-bead mala counting. Just 99¢ on the App Store.</p>
+                    <div class="project-card__tags">
+                        <span class="tag">Swift</span>
+                        <span class="tag">iOS</span>
+                        <span class="tag">Rails</span>
+                        <span class="tag">Hotwire</span>
+                    </div>
+                </div>
+            </article>
+            </a>
+
+            <a href="https://cadence.cards/welcome" target="_blank" rel="noopener" class="project-card-link">
+            <article class="project-card">
+                <div class="project-card__image">
+                    <img src="assets/cadence.png" alt="Cadence.cards" loading="lazy">
+                </div>
+                <div class="project-card__body">
+                    <h3 class="project-card__title">Cadence.cards</h3>
+                    <p class="project-card__description">A simplified spaced repetition learning platform. Built as an alternative to Anki, with Markdown support and intelligent scheduling.</p>
+                    <div class="project-card__tags">
+                        <span class="tag">Rails</span>
+                        <span class="tag">FSRS</span>
+                    </div>
+                </div>
+            </article>
+            </a>
+
+            <a href="https://cerca.me" target="_blank" rel="noopener" class="project-card-link">
+            <article class="project-card">
+                <div class="project-card__image">
+                    <img src="assets/cerca.png" alt="Cerca.me" loading="lazy">
+                </div>
+                <div class="project-card__body">
+                    <h3 class="project-card__title">Cerca.me</h3>
+                    <p class="project-card__description">A mobile app for discovering and organizing places. Automatically categorizes saved locations by city and neighborhood.</p>
+                    <div class="project-card__tags">
+                        <span class="tag">Rails</span>
+                        <span class="tag">iOS</span>
+                        <span class="tag">Google Places API</span>
+                    </div>
+                </div>
+            </article>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Experience -->
+<section id="experience" class="section">
+    <div class="container">
+        <h2>Experience</h2>
+
+        <div class="work-grid">
+            <div class="work-card">
+                <span class="work-card__date">2025 – Present</span>
+                <h3 class="work-card__role">Lead Designer</h3>
+                <p class="work-card__company">Enduvo</p>
+                <p class="work-card__description">Building the future of immersive training through Web & XR platforms.</p>
+            </div>
+
+            <div class="work-card">
+                <span class="work-card__date">2022 – Present</span>
+                <h3 class="work-card__role">Adjunct Lecturer</h3>
+                <p class="work-card__company">Northwestern University</p>
+                <p class="work-card__description">Teaching DSGN 241: Product Design Fundamentals.</p>
+            </div>
+
+            <div class="work-card">
+                <span class="work-card__date">2021 – 2023</span>
+                <h3 class="work-card__role">Senior Product Designer</h3>
+                <p class="work-card__company">TXI</p>
+                <p class="work-card__description">Built a molecular search tool and a prototype comparing financial model changes to their emissions impact.</p>
+            </div>
+
+            <div class="work-card">
+                <span class="work-card__date">2016 – 2021</span>
+                <h3 class="work-card__role">Design Strategist</h3>
+                <p class="work-card__company">Salesforce Ignite</p>
+                <p class="work-card__description">Deep research and design strategy for government, non-profits, and large enterprises.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Teaching -->
+<section id="teaching" class="section">
+    <div class="container">
+        <div class="teaching card">
+            <blockquote class="quote">
                 <p>"To teach a thing is to learn it twice."</p>
                 <cite>— Joseph Joubert</cite>
             </blockquote>
 
-            <p class="lead">
-                At Northwestern University, I teach <strong>DSGN 241: Product Design Fundamentals</strong>, 
-                a hands-on course that bridges the gap between design theory and practical implementation.
-            </p>
+            <p class="course-title">DSGN 241: Product Design Fundamentals — Northwestern University</p>
+
+            <p class="lead">A hands-on course bridging design theory and practical implementation.</p>
 
             <div class="course-outcomes">
-                <h3>Course Outcomes</h3>
                 <ul>
                     <li><strong>Concept to Wireframes:</strong> Transform app ideas into detailed, testable prototypes</li>
                     <li><strong>Collaborative Skills:</strong> Work effectively with designers and engineers</li>
@@ -88,123 +217,15 @@
                 </ul>
             </div>
 
-            <a href="/assets/NW_Syllabus.pdf" class="button" target="_blank">View Course Syllabus</a>
+            <a href="assets/NW_Syllabus.pdf" class="button" target="_blank">View Syllabus</a>
         </div>
     </div>
 </section>
 
-<!-- Projects Section -->
-<section id="projects" class="section projects">
-    <div class="container">
-        <h2>Personal Projects</h2>        
-        
-        <div class="projects-grid">
-            <article class="project-card glass-card">
-                <div class="project-header">
-                    <h3>Mantras.guru</h3>
-                    <a href="https://mantras.guru" target="_blank" rel="noopener" class="project-link">Visit →</a>
-                </div>
-                <p>A multilingual collection of spiritual mantras from Hindu traditions. Features elegant typography, language selection, and a focus on readability for meditation practice.</p>
-                <div class="project-tags">
-                    <span>Ruby on Rails</span>
-                    <span>Sanskrit TTS</span>
-                    <span>Typography</span>
-                </div>
-            </article>
-
-            <article class="project-card glass-card">
-                <div class="project-header">
-                    <h3>Cadence.cards</h3>
-                    <a href="https://cadence.cards/welcome" target="_blank" rel="noopener" class="project-link">Visit →</a>
-                </div>
-                <p>A simplified spaced repetition learning platform. Built as an alternative to complex tools like Anki, focusing on ease of use with Markdown support and intelligent scheduling.</p>
-                <div class="project-tags">
-                    <span>Rails</span>
-                    <span>Free Spaced Repetition Scheduler</span>
-                    <span>Markdown & LaTex</span>
-                </div>
-            </article>
-
-            <article class="project-card glass-card">
-                <div class="project-header">
-                    <h3>Cerca.me</h3>
-                    <a href="https://cerca.me" target="_blank" rel="noopener" class="project-link">Visit →</a>
-                </div>
-                <p>A mobile app for discovering and organizing places of interest. Automatically categorizes saved locations by city and neighborhood with proximity-based sorting.</p>
-                <div class="project-tags">
-                    <span>Mobile Design</span>
-                    <span>Geolocation</span>
-                    <span>iOS</span>
-                </div>
-            </article>
-        </div>
-    </div>
-</section>
-
-<!-- Experience Section -->
-<section id="experience" class="section experience">
-    <div class="container">
-        <h2>Experience</h2>
-        
-        <div class="timeline">
-            <div class="timeline-item glass-card">
-                <div class="timeline-date">2025 - Present</div>
-                <div class="timeline-content">
-                    <h3>Lead Designer</h3>
-                    <p class="timeline-company">Enduvo</p>
-                    <p>Building the future of immersive training through Web & XR platforms.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item glass-card">
-                <div class="timeline-date">2022 - Present</div>
-                <div class="timeline-content">
-                    <h3>Adjunct Lecturer</h3>
-                    <p class="timeline-company">Northwestern University</p>
-                    <p>Teaching DSGN 241: Product Design Fundamentals. Helping students transform ideas into testable prototypes.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item glass-card">
-                <div class="timeline-date">2021 - 2023</div>
-                <div class="timeline-content">
-                    <h3>Senior Product Designer</h3>
-                    <p class="timeline-company">TXI</p>
-                    <p>Built a molecular search tool, and developed a prototype to compare changes in a financial model to their equivalent emissions impact.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item glass-card">
-                <div class="timeline-date">2016 - 2021</div>
-                <div class="timeline-content">
-                    <h3>Design Strategist</h3>
-                    <p class="timeline-company">Salesforce Ignite</p>
-                    <p>Provided deep research and design strategy for the government, non-profits, and large enterprises.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Connect Section -->
+<!-- Connect -->
 <section id="connect" class="section connect">
     <div class="container">
-        <div class="glass-card">
-            <h2>Let's Connect</h2>
-            <p class="lead">Whether you're interested in design, development, or just want to chat about ideas, I'd love to hear from you.</p>
-            
-            <div class="connect-links">
-                <a href="https://www.linkedin.com/in/arvindang/" target="_blank" rel="noopener" class="connect-link">
-                    <span class="icon">💼</span>
-                    LinkedIn
-                </a>
-                <a href="https://github.com/arvindang" target="_blank" rel="noopener" class="connect-link">
-                    <span class="icon">⚡</span>
-                    GitHub
-                </a>
-            </div>
-        </div>
+        <h2>Let's Connect</h2>
+        <p class="connect__lead">Whether you're interested in design, open source, or just want to talk shop — I'd love to hear from you.</p>
     </div>
 </section>
-
-<%= javascript_include_tag "site" %>
