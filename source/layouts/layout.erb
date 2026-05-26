@@ -19,11 +19,24 @@
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%23C9835A'/></svg>">
 
-    <title>Arvin Dang</title>
+    <title><%= current_page.data.title || "Arvin Dang" %></title>
     <%= stylesheet_link_tag "site" %>
     <%= javascript_include_tag "site" %>
   </head>
   <body>
+    <nav class="nav" id="main-nav">
+      <div class="nav__inner">
+        <a href="/" class="nav__name">Arvin Dang</a>
+        <div class="nav__links">
+          <a href="/#projects">Projects</a>
+          <a href="/#experience">Experience</a>
+          <a href="/#teaching">Teaching</a>
+          <a href="/field-notes/">Field Notes</a>
+          <a href="/#connect">Connect</a>
+        </div>
+      </div>
+    </nav>
+
     <%= yield %>
 
     <footer class="footer">
