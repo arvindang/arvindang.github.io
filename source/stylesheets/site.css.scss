@@ -481,8 +481,60 @@ a:hover {
     margin: 0;
 }
 
+.footer__copy a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 0.2em;
+}
+
+.footer__copy a:hover {
+    color: var(--color-text-secondary);
+    text-decoration-color: currentColor;
+}
+
 // =============================================
-// 8. Writing Page
+// 8. Privacy Page
+// =============================================
+.privacy {
+    min-height: calc(100vh - 180px);
+    padding-top: calc(var(--spacing-2xl) + 60px);
+}
+
+.privacy__content {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.privacy__eyebrow,
+.privacy__updated {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.privacy__eyebrow {
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-xs);
+}
+
+.privacy h1 {
+    margin-bottom: var(--spacing-md);
+}
+
+.privacy h2 {
+    font-size: 1.5rem;
+    margin: var(--spacing-lg) 0 var(--spacing-sm);
+}
+
+.privacy__updated {
+    margin-top: var(--spacing-lg);
+}
+
+// =============================================
+// 9. Writing Page
 // =============================================
 .writing-nav {
     position: fixed;
@@ -573,190 +625,7 @@ a:hover {
 }
 
 // =============================================
-// 8b. Field Notes Index
-// =============================================
-.field-notes {
-    max-width: 880px;
-    margin: 0 auto;
-    padding: calc(var(--spacing-2xl) + 60px) var(--spacing-md) var(--spacing-2xl);
-}
-
-.field-notes__masthead {
-    padding-bottom: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
-}
-
-.field-notes__kicker {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--color-accent);
-    margin-bottom: var(--spacing-sm);
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.field-notes__kicker::before,
-.field-notes__kicker::after {
-    content: '';
-    flex: 0 0 24px;
-    height: 1px;
-    background: var(--color-accent);
-    opacity: 0.5;
-}
-
-.field-notes__title {
-    font-family: var(--font-serif);
-    font-size: clamp(3rem, 7vw, 5rem);
-    font-weight: 400;
-    line-height: 1;
-    letter-spacing: -0.025em;
-    margin-bottom: var(--spacing-md);
-}
-
-.field-notes__title em {
-    font-style: italic;
-    color: var(--color-accent);
-}
-
-.field-notes__lede {
-    font-family: var(--font-serif);
-    font-size: 1.25rem;
-    line-height: 1.55;
-    color: var(--color-text-secondary);
-    max-width: 560px;
-    font-style: italic;
-}
-
-.field-notes__list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.field-notes__entry {
-    display: grid;
-    grid-template-columns: 140px 1fr;
-    gap: var(--spacing-lg);
-    padding: var(--spacing-lg) 0;
-    border-top: 1px solid var(--color-border);
-    opacity: 0;
-    animation: fadeInUp 0.6s ease forwards;
-    position: relative;
-}
-
-.field-notes__entry:nth-child(1) { animation-delay: 0.08s; }
-.field-notes__entry:nth-child(2) { animation-delay: 0.16s; }
-.field-notes__entry:nth-child(3) { animation-delay: 0.24s; }
-.field-notes__entry:nth-child(4) { animation-delay: 0.32s; }
-.field-notes__entry:nth-child(5) { animation-delay: 0.40s; }
-.field-notes__entry:nth-child(6) { animation-delay: 0.48s; }
-
-.field-notes__entry:last-child {
-    border-bottom: 1px solid var(--color-border);
-}
-
-.field-notes__meta {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.05em;
-    color: var(--color-text-muted);
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    padding-top: 0.5rem;
-}
-
-.field-notes__number {
-    color: var(--color-accent);
-    font-weight: 500;
-}
-
-.field-notes__date {
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-}
-
-.field-notes__content {
-    min-width: 0;
-}
-
-.field-notes__link {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-}
-
-.field-notes__heading {
-    font-family: var(--font-serif);
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 400;
-    line-height: 1.15;
-    letter-spacing: -0.015em;
-    color: var(--color-text);
-    margin-bottom: var(--spacing-sm);
-    transition: color 0.25s ease;
-    display: inline;
-    background-image: linear-gradient(var(--color-accent), var(--color-accent));
-    background-repeat: no-repeat;
-    background-size: 0% 1px;
-    background-position: 0 100%;
-    transition: background-size 0.4s ease, color 0.25s ease;
-    padding-bottom: 2px;
-}
-
-.field-notes__link:hover .field-notes__heading {
-    color: var(--color-accent);
-    background-size: 100% 1px;
-}
-
-.field-notes__desc {
-    color: var(--color-text-secondary);
-    font-size: 1rem;
-    line-height: 1.65;
-    margin: var(--spacing-sm) 0 0;
-    max-width: 56ch;
-}
-
-.field-notes__arrow {
-    font-family: var(--font-mono);
-    color: var(--color-text-muted);
-    font-size: 0.875rem;
-    margin-top: var(--spacing-sm);
-    display: inline-block;
-    transition: transform 0.3s ease, color 0.25s ease;
-}
-
-.field-notes__link:hover .field-notes__arrow {
-    color: var(--color-accent);
-    transform: translateX(6px);
-}
-
-.field-notes__empty {
-    padding: var(--spacing-xl) 0;
-    color: var(--color-text-muted);
-    font-style: italic;
-    font-family: var(--font-serif);
-    text-align: center;
-}
-
-@media (max-width: 640px) {
-    .field-notes__entry {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-sm);
-    }
-
-    .field-notes__meta {
-        flex-direction: row;
-        gap: var(--spacing-md);
-        padding-top: 0;
-    }
-}
-
-// =============================================
-// 9. Utilities & Animations
+// 10. Utilities & Animations
 // =============================================
 @keyframes fadeInUp {
     from {
@@ -781,7 +650,7 @@ a:hover {
 }
 
 // =============================================
-// 10. Responsive
+// 11. Responsive
 // =============================================
 @media (max-width: 768px) {
     :root {
