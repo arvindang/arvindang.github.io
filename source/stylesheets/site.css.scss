@@ -173,6 +173,15 @@ a:hover {
     color: var(--color-text);
 }
 
+.nav__links .nav__qr {
+    display: inline-flex;
+    align-items: center;
+}
+
+.nav__links .nav__qr svg {
+    display: block;
+}
+
 // =============================================
 // 4. Components
 // =============================================
@@ -534,6 +543,81 @@ a:hover {
 }
 
 // =============================================
+// 8b. QR Page
+// =============================================
+.qr-page {
+    min-height: calc(100vh - 180px);
+    padding-top: calc(var(--spacing-2xl) + 60px);
+    text-align: center;
+}
+
+.qr-page__content {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.qr-page__eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-xs);
+}
+
+.qr-page h1 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.qr-page__lead {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+// White card so the code stays scannable on the dark theme;
+// padding doubles as the QR quiet zone.
+.qr-page__code {
+    background: #FFFFFF;
+    color: #111111;
+    border-radius: var(--radius-lg);
+    // No CSS min()/clamp() here — the libsass minifier can't parse them
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+    box-shadow: var(--shadow-md);
+}
+
+.qr-page__code svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.qr-page__url {
+    margin-top: var(--spacing-sm);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+}
+
+.qr-page__url a {
+    color: var(--color-accent);
+}
+
+.qr-page__url a:hover {
+    color: var(--color-accent-hover);
+}
+
+.qr-page__links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    padding-bottom: var(--spacing-lg);
+}
+
+// =============================================
 // 9. Writing Page
 // =============================================
 .writing-nav {
@@ -678,6 +762,11 @@ a:hover {
     .writing-nav {
         position: static;
         padding: var(--spacing-md);
+    }
+
+    .qr-page__code {
+        max-width: 300px;
+        padding: 1.5rem;
     }
 }
 
