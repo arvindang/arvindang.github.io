@@ -2,6 +2,7 @@ import { createVideoScrubber } from './vendor/scroll-video-scrubber.js';
 
 const projects = [...document.querySelectorAll('.project')];
 const mediaQuery = matchMedia('(prefers-reduced-motion: reduce)');
+const shortViewport = matchMedia('(max-height: 560px)');
 const motionButton = document.querySelector('#motion-toggle');
 const dialog = document.querySelector('#film-dialog');
 const dialogVideo = document.querySelector('#dialog-video');
@@ -54,7 +55,8 @@ function enableProject(project) {
     video, sticky:project.querySelector('.stage'),
     progress:project.querySelector('[data-svs-progress]'),
     onProgress:p=>showProgress(project,p),
-    onError:()=>project.querySelector('.film-card').classList.add('media-error')
+    // A failed seek can recover; only a media failure needs the fallback.
+    onError:()=>{if(video.error) project.querySelector('.film-card').classList.add('media-error');}
   });
   controllers.set(project,controller);
   showProgress(project,controller.progress);
@@ -65,14 +67,15 @@ const nearViewport = new IntersectionObserver(entries=>{
 },{rootMargin:'500px 0px'});
 
 function applyMotionMode() {
-  isReduced=mediaQuery.matches||userWantsLessMotion;
+  isReduced=mediaQuery.matches||userWantsLessMotion||shortViewport.matches;
   controllers.forEach(controller=>controller.destroy()); controllers.clear();
   document.documentElement.classList.toggle('enhanced',!isReduced);
   document.documentElement.classList.toggle('no-motion',isReduced);
-  motionButton.textContent=isReduced?'More motion':'Less motion';
+  const forcedReading=mediaQuery.matches||shortViewport.matches;
+  motionButton.textContent=isReduced&&!forcedReading?'More motion':'Less motion';
   motionButton.setAttribute('aria-pressed',String(isReduced));
-  motionButton.disabled=mediaQuery.matches;
-  motionButton.title=mediaQuery.matches?'Reduced motion follows your system preference':'';
+  motionButton.disabled=forcedReading;
+  motionButton.title=mediaQuery.matches?'Reduced motion follows your system preference':shortViewport.matches?'A shorter screen uses the reading layout':'';
   for(const project of projects) {
     const video=project.querySelector('video'); video.controls=isReduced;
     project.querySelectorAll('.copy-slide').forEach(slide=>{
@@ -84,13 +87,17 @@ function applyMotionMode() {
   }
 }
 
-motionButton.addEventListener('click',()=>{
+function refreshMotionLayout() {
   const current=projects.find(project=>{const r=project.getBoundingClientRect();return r.top<=150&&r.bottom>150;});
-  userWantsLessMotion=!userWantsLessMotion;
   applyMotionMode();
   if(current) window.scrollTo({top:scrollY+current.getBoundingClientRect().top-parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height')),behavior:'instant'});
+}
+motionButton.addEventListener('click',()=>{
+  userWantsLessMotion=!userWantsLessMotion;
+  refreshMotionLayout();
 });
-mediaQuery.addEventListener('change',applyMotionMode);
+mediaQuery.addEventListener('change',refreshMotionLayout);
+shortViewport.addEventListener('change',refreshMotionLayout);
 applyMotionMode();
 
 for(const project of projects) {
@@ -102,7 +109,9 @@ for(const project of projects) {
     const target=[.08,.43,.79][Number(button.dataset.beatTarget)];
     window.scrollTo({top:scrollY+runway.getBoundingClientRect().top-stickyTop+travel*target,behavior:isReduced?'instant':'smooth'});
   });
-  project.querySelector('video').addEventListener('error',()=>project.querySelector('.film-card').classList.add('media-error'));
+  const video=project.querySelector('video');
+  video.addEventListener('error',()=>project.querySelector('.film-card').classList.add('media-error'));
+  video.addEventListener('loadeddata',()=>project.querySelector('.film-card').classList.remove('media-error'));
 }
 
 const sources={evaluate:'https://github.com/arvindang/evaluate-product-designers',math:'https://github.com/arvindang/math-collective-skills'};

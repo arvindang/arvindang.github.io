@@ -4,3 +4,82 @@
 @media(max-width:700px){:root{--header-height:62px;--chapter-height:56px}.site-header{padding:0 20px;gap:18px}.wordmark{font-size:35px}.site-header nav{gap:18px;font-size:12px}.site-header #motion-toggle{font-size:11px}.hello-link{display:none}.project-menu{right:18px;top:55px;min-width:280px;max-width:90vw}.hero{padding:22px 23px 0;min-height:0}.hero-topline{font-size:8px}.hero-topline>span:last-child{display:none}.hero-content{display:block;min-height:0}.hero-type{padding:37px 0 0}.hero h1{font-size:clamp(58px,12.7vw,87px);line-height:.95;margin-bottom:22px}.hero-type>p{font-size:17px;max-width:335px;margin-top:29px}.hero-cta{padding:12px 18px;font-size:13px;gap:25px}.hero-collage{height:390px;max-width:410px;margin:15px auto 5px;transform:translateY(0);}.collage-main{width:89%;left:22px;top:117px}.collage-comic{width:145px;height:210px;left:100px;top:0;transform:rotate(-14deg)}.collage-murmur{top:239px;width:146px;height:123px;left:22px}.sticker{top:276px;right:11px;width:97px;height:97px;font-size:16px}.collage-note{display:none}.hero-footer{font-size:8px;padding:20px 0}.hero-footer>span:first-child{max-width:185px}.hero-footer>span:last-child{max-width:95px;text-align:right}.project-header{padding:0 20px;gap:10px}.project-title{font-size:20px;gap:15px}.project-count{min-width:40px;font-size:9px}.project-kind{display:none}.next-link{font-size:11px;padding-left:6px}.stage{display:flex;flex-direction:column;gap:0;padding:38px 27px 55px;align-items:stretch;justify-content:center}.enhanced .stage{height:calc(100svh - var(--header-height) - var(--chapter-height));min-height:550px}.enhanced .runway{height:265svh}.media-zone{width:100%;max-width:520px;margin:0 auto;flex-shrink:0}.film-card{border-radius:9px;box-shadow:0 25px 30px -12px #1d132f60,6px 9px 0 #29232f18}.film-chrome{height:23px;font-size:7px;padding:0 9px}.window-dots i{width:5px;height:5px}.film-caption{position:relative;bottom:auto;padding:20px 0 0;font-size:7px;letter-spacing:-.01em;min-height:49px;align-items:center}.watch-button{font-size:12px;padding:8px 0}.story-copy{padding-top:18px;width:100%;max-width:520px;margin:0 auto}.enhanced .copy-slides{height:198px}.copy-slide{padding:0 0 24px}.copy-slide h2{font-size:38px;line-height:1.01;margin:8px 0 13px;letter-spacing:-.055em}.copy-slide .eyebrow{font-size:9px;margin:0}.description{font-size:14px;line-height:1.45;max-width:330px}.beat-controls{gap:8px;flex-wrap:nowrap;min-height:44px}.beat-button{width:44px;height:44px;flex-shrink:0}.visit-link{flex-basis:auto;font-size:11px;padding:0 0 0 6px;margin-left:auto;line-height:1.5;text-align:right}.stage-floor{bottom:15px;left:23px;right:23px;font-size:8px;gap:12px}.film-progress{width:52px}.giant-word{font-size:110px;bottom:-3px;left:0}.about{padding:55px 24px 60px}.about-grid{display:block}.about h2{font-size:53px;line-height:1.02}.about-text{padding-top:35px}.about-text .large-copy{font-size:25px}.about-text p{font-size:17px}.tool-intro{padding:75px 0 35px;display:block}.tool-intro h3{font-size:29px}.tool-intro>span{display:block;margin-top:20px;font-size:9px}.tool-grid{display:block;padding:0 6px}.tool-card{padding:29px 25px;margin-bottom:35px}.tool-card h4{font-size:48px}.tool-card p{font-size:16px}.contact{padding:50px 25px 30px}.contact-title{font-size:64px;line-height:1;margin-bottom:45px}.contact-title svg{width:44px;right:0;top:9px}.contact-bottom{flex-wrap:wrap;font-size:12px;gap:24px}.contact-bottom>span{order:3;flex-basis:100%;font-size:8px}.contact-bottom>a:last-child{margin-left:auto}.no-motion .stage{padding:35px 24px 40px}.no-motion .media-zone{position:static}.no-motion .hero-collage{transform:none!important}dialog{padding:13px;width:95vw}.dialog-header h2{font-size:18px}.dialog-header button{font-size:12px}dialog p{line-height:1.5;font-size:11px}}
 @media(max-height:680px) and (min-width:701px){.stage{padding-top:35px;padding-bottom:65px}.enhanced .copy-slides{height:245px}.copy-slide h2{font-size:37px}.description{font-size:15px}.film-caption{bottom:-49px}.enhanced .stage{min-height:420px}.hero-content{min-height:590px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-cta,.contact-title svg{transition:none}.film-card{transform:none;will-change:auto}.collage-card{will-change:auto}}
+
+/* Give tall screens a film above the story, reserving room for tilt and the footer. */
+@media (min-width:701px) and (min-height:900px) and (max-aspect-ratio:4/3) {
+  .enhanced .stage {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:stretch;
+    gap:76px;
+    padding:64px clamp(48px,6vw,120px) 90px;
+  }
+  .enhanced .media-zone {
+    width:min(100%,calc((100svh - 530px) * 1.5));
+    margin:0 auto;
+    flex-shrink:0;
+  }
+  .enhanced .story-copy {
+    width:min(100%,calc((100svh - 530px) * 1.5));
+    margin:0 auto;
+  }
+  .enhanced .copy-slides {display:grid;height:auto;min-height:190px}
+  .enhanced .copy-slide {position:relative;inset:auto;grid-area:1/1;padding:0 0 18px}
+  .enhanced .copy-slide .eyebrow {margin:0}
+  .enhanced .copy-slide h2 {
+    font-size:clamp(40px,3.6vw,58px);
+    margin:10px 0 16px;
+  }
+  .enhanced .description {max-width:660px}
+  .enhanced .beat-controls {flex-wrap:nowrap;gap:10px}
+  .enhanced .beat-button {width:44px;height:44px;flex-shrink:0}
+  .enhanced .visit-link {flex-basis:auto;padding:0;margin-left:20px}
+}
+/* Keep every control reachable on a phone, including shorter displays. */
+@media (max-width:700px) {
+  .site-header #motion-toggle {min-height:44px}
+  .site-header nav {gap:clamp(10px,3vw,18px)}
+  .project-menu {max-height:calc(100svh - 90px);overflow-y:auto}
+  .enhanced .stage {min-height:0}
+  .enhanced .media-zone {width:min(100%,calc((100svh - 465px) * 1.55))}
+  .watch-button {min-height:44px}
+}
+@media (max-width:700px) and (max-height:740px) {
+  .enhanced .stage {padding-top:24px;padding-bottom:44px}
+  .enhanced .copy-slides {height:175px}
+  .enhanced .copy-slide h2 {font-size:32px}
+  .enhanced .story-copy {padding-top:12px}
+  .enhanced .film-caption {padding-top:14px;min-height:44px}
+  .enhanced .media-zone {width:min(100%,calc((100svh - 450px) * 1.55))}
+}
+
+@media (min-width:701px) and (min-height:900px) and (max-height:1099px) and (max-aspect-ratio:4/3) {
+  .enhanced .stage {padding-top:32px;padding-bottom:60px;gap:64px}
+}
+
+@media (max-width:360px) {
+  .hero h1 {font-size:clamp(48px,14.5vw,52px)}
+  .contact-title {font-size:clamp(48px,15vw,54px)}
+  .enhanced .stage {padding:14px 22px 38px}
+  .enhanced .media-zone {width:min(100%,calc((100svh - 465px) * 1.55))}
+  .enhanced .film-caption {padding-top:8px}
+  .enhanced .story-copy {padding-top:8px}
+  .enhanced .copy-slides {height:180px}
+  .enhanced .copy-slide h2 {font-size:28px}
+  .enhanced .description {font-size:13px}
+}
+/* The reading layout remains usable when a phone is turned sideways. */
+@media (max-height:560px) {
+  .no-motion .stage {display:block;padding:32px 6vw 55px}
+  .no-motion .media-zone {position:static;width:min(100%,580px);margin:0 auto 36px}
+  .no-motion .story-copy {max-width:740px;margin:auto;padding-top:0}
+}
+/* Let the longest copy panel determine its space as type wraps. */
+@media (min-width:701px) {
+  .enhanced .copy-slides {display:grid;height:auto;min-height:270px}
+  .enhanced .copy-slide {position:relative;inset:auto;grid-area:1/1}
+}
+@media (min-width:701px) and (min-height:900px) and (max-aspect-ratio:4/3) {
+  .enhanced .copy-slides {min-height:190px}
+}

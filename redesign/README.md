@@ -12,11 +12,14 @@ This draft lives in `redesign/` on branch `codex/portfolio-redesign`. The existi
 
 ## The direction
 
+The name is **Arvin Dang** and the domain/wordmark is **arv.in**, with the red dot between `arv` and `in`. Ongoing identity and design preferences are recorded in `AGENTS.md`.
+
 - Bricolage Grotesque, expressive scale, pastel project colors, and a pile of askew screens.
 - Large drop shadows and a changing screen angle along each scroll path.
+- Tall desktop/tablet screens put a broad film above left-aligned copy. Landscape desktop windows retain the two-column composition so the film stays readable. The film size reserves room for rotation, copy, and the footer.
 - Three copy slides per project, driven by the same progress as the film.
 - Sticky project headings, a persistent project menu, and direct jumps between sections.
-- A quieter mode with all copy visible, ordinary video controls, and shorter sections.
+- A quieter mode with all copy visible, ordinary video controls, and shorter sections. Screens at most 560px high use this reading layout automatically; taller screens retain the manual choice. System reduced-motion preferences also take precedence.
 - A full-size film dialog, keyboard focus, Escape to close, and native playback.
 - Current public recordings throughout; no simulated native-app interfaces.
 
@@ -64,3 +67,13 @@ Typography: Bricolage Grotesque and DM Mono, distributed under the SIL Open Font
 - Switched into and out of the quieter mode: native controls and all copy were available, and the current project remained in view after layout settled.
 - Opened the project index and followed a project link; the menu closed.
 - Checked local asset paths, anchor targets, duplicate IDs, JavaScript syntax, MP4 duration/decodability, and HTTP 206 byte-range delivery.
+
+### September 11 responsive refinement
+
+- Checked 1039×1304 (the review screenshot shape), 1200×1000, and 1280×720, plus phones at 390×844, 375×667, and 320×568. Copy panels fit, and there was no horizontal page overflow at the verified sizes.
+- Checked the 844×390 landscape reading layout: all 24 copy slides remained visible, and films had native controls.
+- Verified the mobile motion toggle in both directions, forward/reverse scrubbing, and copy/progress changes. Film and copy remain above the section footer on the tested phone layouts.
+- Restarted the preview from the committed repository. Verified all HTML-linked local assets and MP4 range responses. Recoverable seek errors no longer mark a film unavailable; a successful media load clears an earlier failure caption.
+- Confirmed project content, colors, headers, footer markup, background lettering, and About content are unchanged. The only HTML change is the wordmark.
+
+These are browser viewport checks, not physical iOS/Android device tests.
