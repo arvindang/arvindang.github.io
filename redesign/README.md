@@ -44,6 +44,8 @@ The MP4s were created from timestamped browser frame captures (approximately 10�
 | `media/evaluate.mp4` | https://github.com/arvindang/evaluate-product-designers | Public repository/guide scroll | Documentation capture, not an evaluation of a real person. |
 | `media/math.mp4` | https://github.com/arvindang/math-collective-skills | Public repository/guide scroll | Documentation capture, not a live advisory session. |
 
+Dasha-FM is hidden from the portfolio, navigation, and active project count as of September 11. Its source entry and captures are retained for reference. The seven visible project entries each have a short description in the project menu.
+
 Every film also has an opening JPEG and a final/detail JPEG. Public source assets include Illustrative’s sample pages, Murmur’s widget/settings images, and the scrubber’s Flower source video. The committed MP4s and stills are self-contained. Raw browser frames and timestamps remain in the original Codex task workspace under `work/recordings`; they are not required to run this draft.
 
 ## Your plugin
@@ -77,3 +79,10 @@ Typography: Bricolage Grotesque and DM Mono, distributed under the SIL Open Font
 - Confirmed project content, colors, headers, footer markup, background lettering, and About content are unchanged. The only HTML change is the wordmark.
 
 These are browser viewport checks, not physical iOS/Android device tests.
+
+### Opening section and project navigation
+
+- The opening footer sits at the viewport bottom and remains sticky within the hero when its content is taller than the screen. The rabbit-hole tagline and font-opinions line have been removed.
+- Header controls share a 44px height and the same label alignment. The project dropdown includes a sentence for each of the seven featured projects and scrolls within short viewports.
+- Dasha-FM is hidden in HTML and marked hidden in `projects.json`; the scrubber setup ignores hidden projects. Tufte links directly to Scroll Video Scrubber, and visible counts run from 01 / 07 through 07 / 07.
+- Checked the hero and menu at 1039×1304, 390×844, and 320×568. Verified mobile footer pinning, dropdown scrolling and selection, hidden media loading, and the film dialog title after renumbering.

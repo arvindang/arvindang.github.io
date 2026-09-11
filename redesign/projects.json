@@ -21,7 +21,8 @@
         "The whole thing\nhas to hang together.",
         "Type, pacing, product, and the path through it all. I like working across the whole picture."
       ]
-    ]
+    ],
+    "description": "A new website for a platform built around human expertise."
   },
   {
     "id": "embed3d",
@@ -45,7 +46,8 @@
         "And then,\nput it anywhere.",
         "Bring the lesson into a website or learning platform. A complicated object, made approachable."
       ]
-    ]
+    ],
+    "description": "Create interactive 3D lessons and embed them anywhere."
   },
   {
     "id": "cerca",
@@ -69,7 +71,8 @@
         "Taste is personal.\nSo is the map.",
         "A place is more useful when you know who saved it. Explore my actual collection."
       ]
-    ]
+    ],
+    "description": "Save places and recommendations from people whose taste you trust."
   },
   {
     "id": "illustrative",
@@ -93,7 +96,8 @@
         "The output\nis the fun part.",
         "A finished book you can read, share, and export. An idea becomes something you can hold onto."
       ]
-    ]
+    ],
+    "description": "Turn books and stories into illustrated comics."
   },
   {
     "id": "murmur",
@@ -117,7 +121,8 @@
         "I like small\nsolutions.",
         "Especially the kind that fit into an existing habit. This one lives quietly in the menu bar."
       ]
-    ]
+    ],
+    "description": "Listen to text from the Mac apps you already use."
   },
   {
     "id": "tufte",
@@ -141,7 +146,8 @@
         "And you should\nbe able to check it.",
         "Supporting evidence belongs with the chart. Clarity includes knowing where the numbers came from."
       ]
-    ]
+    ],
+    "description": "Make portable charts with evidence you can check."
   },
   {
     "id": "dasha",
@@ -165,7 +171,8 @@
         "Still curious.\nStill making.",
         "Today, the site points to Out Loud: one thoughtful question and a minute to answer it aloud. A smaller experiment in reflection."
       ]
-    ]
+    ],
+    "hidden": true
   },
   {
     "id": "scrubber",
@@ -189,6 +196,7 @@
         "A small tool.\nA lot of possibilities.",
         "Use it for your own idea. The source is open, and the scrolling is still just scrolling."
       ]
-    ]
+    ],
+    "description": "Scrub through video as you scroll, using native browser scrolling."
   }
 ]

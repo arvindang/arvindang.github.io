@@ -1,6 +1,6 @@
 import { createVideoScrubber } from './vendor/scroll-video-scrubber.js';
 
-const projects = [...document.querySelectorAll('.project')];
+const projects = [...document.querySelectorAll('.project:not([hidden])')];
 const mediaQuery = matchMedia('(prefers-reduced-motion: reduce)');
 const shortViewport = matchMedia('(max-height: 560px)');
 const motionButton = document.querySelector('#motion-toggle');
@@ -118,7 +118,7 @@ const sources={evaluate:'https://github.com/arvindang/evaluate-product-designers
 for(const button of document.querySelectorAll('[data-watch]')) button.addEventListener('click',()=>{
   const id=button.dataset.watch;
   const project=document.getElementById(id);
-  document.querySelector('#film-dialog-title').textContent=project?project.querySelector('.project-title').textContent.replace(/^\s*\d+\s*\/\s*08/,'').trim():id==='evaluate'?'Evaluate Product Designers':'MATH Founder Stack';
+  document.querySelector('#film-dialog-title').textContent=project?project.querySelector('.project-title').textContent.replace(/^\s*\d+\s*\/\s*\d+/,'').trim():id==='evaluate'?'Evaluate Product Designers':'MATH Founder Stack';
   const link=document.querySelector('#dialog-source');
   link.href=project?project.querySelector('.visit-link').href:sources[id];
   dialogVideo.src=`./media/${id}.mp4`; dialogVideo.poster=`./media/${id}.jpg`;
