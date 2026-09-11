@@ -93,3 +93,8 @@ These are browser viewport checks, not physical iOS/Android device tests.
 - Replaced six films and both corresponding posters for each. Illustrative’s files and section remain byte-for-byte unchanged.
 - Verified silent media, complete decoding, HTTP byte ranges, and nonzero visual change in every copy block. Tested 01/02/03 plus 97% progress and reverse seeking on desktop; repeated 15%, 50%, 85%, and 97% on a 390×844 viewport. The scrubber also reached its final frame at 99.9% progress.
 - Checked Murmur’s inset in the page, the Less motion reading layout, and the playback dialog. Dialog captions now describe the specific recording, including the new app walkthroughs.
+
+### Recording aspect correction
+
+- Enduvo and Cerca’s source files have a nearly square display ratio despite their stored 1920×1080 dimensions. Re-exported both at 1056×1080 with square pixels, regenerated their posters, and preserved their scene timings. The earlier 16:9 exports had stretched the picture horizontally.
+- Their cards now follow the recordings’ proportions and fit within the available height on desktop, tablet and phone layouts. The playback dialog also follows the film’s natural proportions. Verified copy blocks 01/02/03, the final stretch, Less motion, and viewport sizes down to 320×568. See [media notes](media/README.md) for the source metadata.

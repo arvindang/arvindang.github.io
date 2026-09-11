@@ -21,7 +21,9 @@ Original files on Arvin’s Desktop were left intact. All output timestamps belo
 - **Embed3D.mp4:** source 12–20 becomes output 0–6; source 31–37 becomes 6–12; source 58–82 becomes 12–24; source 196–208 becomes 24–30; source 258–270 becomes 30–36. Removes the unrelated chat detour, loading and long pauses. Audio is removed completely. Crop `1734:976:0:94` removes browser chrome before scaling. Poster at output 0.2; detail at 17.
 - **Cerca.mp4:** source 4–18 becomes output 0–10; source 30–44 becomes 10–20; source 44–54 becomes 20–30. Omits the intermediate zoom/pan detour. Poster at output 0.5; detail at 26.
 
-These outputs are 1600×900, H.264/yuv420p, 30 fps, CRF 20, faststart, with keyframes every ten frames and no audio.
+Enduvo and Cerca are 1056×1080 with square pixels; Embed3D is 1600×900. All three use H.264/yuv420p, 30 fps, CRF 20, faststart, with keyframes every ten frames and no audio.
+
+The Enduvo and Cerca originals store 1920×1080 pixels but specify a pixel aspect ratio of 711:1292, giving a nearly square display ratio of 316:323. Their first exports incorrectly discarded that metadata and stretched the picture to 16:9. The corrected exports normalize the display width to 1056 pixels (rounded to an even width for H.264), preserving the complete picture and the original scene timing. Both posters are regenerated from the corrected films. Their cards use the matching aspect ratio, with size limits that reserve space for copy, tilt and the section footer.
 
 ## Fresh browser captures
 
@@ -34,3 +36,5 @@ These outputs are 1280×720, silent H.264/yuv420p, 30 fps, CRF 20, faststart, wi
 ## Validation
 
 All six clips decode, have no audio track, and contain visible image changes within each of the three copy blocks. Desktop and mobile browser checks confirmed the expected video times at each block, near the end of the final block, and during reverse scrolling. Illustrative’s media files and HTML section were compared against the prior commit and remain unchanged. Physical Safari/iOS and Chrome/Android checks are still separate from these browser viewport tests.
+
+After the aspect correction, checked Enduvo and Cerca at 1039×1304, 1440×900, 768×1024, 390×844 and 375×667; also checked Enduvo at 320×568. Verified the rendered video proportions, three copy blocks and final stretch, reachable controls, no horizontal overflow, the playback dialog and Less motion.
