@@ -6,6 +6,8 @@ A local, static portfolio draft, September 10, 2026. This supersedes the Paper d
 
 From the repository root, run `node redesign/server.mjs`, then open http://127.0.0.1:4173. From this directory, `node server.mjs` works as well. Stop any earlier preview using that port before starting another.
 
+For the script-free fallback, run `node redesign/server.mjs --no-js` and open http://127.0.0.1:4174. This serves the same files with a Content Security Policy that blocks all page scripts. It can run alongside the normal preview. The fallback does not depend on a query parameter or JavaScript choosing a special mode.
+
 The server supports byte-range requests for video seeking. HTML, CSS, JavaScript, fonts, posters, and MP4s are all local. No build step, external service, or API key is needed. Product/source links intentionally lead to the live web. The email address comes from Dasha’s public support link.
 
 This draft lives in `redesign/` on branch `codex/portfolio-redesign`. The existing Middleman site remains in `source/`; this folder is outside its build input and has not been deployed.
@@ -19,8 +21,9 @@ The name is **Arvin Dang** and the domain/wordmark is **arv.in**, with the red d
 - Tall desktop/tablet screens put a broad film above left-aligned copy. Landscape desktop windows retain the two-column composition so the film stays readable. The film size reserves room for rotation, copy, and the footer.
 - Three copy slides per project, driven by the same progress as the film.
 - Sticky project headings, a persistent project menu, and direct jumps between sections.
-- A quieter mode with all copy visible, ordinary video controls, and shorter sections. Screens at most 560px high use this reading layout automatically; taller screens retain the manual choice. System reduced-motion preferences also take precedence.
+- A quieter mode with all copy visible, ordinary video controls, instant anchor navigation, and shorter sections. Screens at most 600px high, or phones at most 700px wide and 700px high, use this reading layout automatically. Larger screens retain the manual choice. System reduced-motion preferences also take precedence.
 - A full-size film dialog, keyboard focus, Escape to close, and native playback.
+- Without JavaScript, videos have real source URLs and native controls, film links open the MP4s, all copy remains readable, and the native project dropdown still works. Script-dependent motion and chapter controls are hidden.
 - Owner-provided Enduvo, Embed3D, and Cerca recordings, alongside public-page captures for the remaining work.
 
 The copy and order are proposed for review. Specific contribution credits are strongest for Enduvo (website redesign) and Embed3D (designed and built), which Arvin explicitly confirmed. Confirm the final contribution/collaborator wording across the rest of the collection before publication.
@@ -98,3 +101,11 @@ These are browser viewport checks, not physical iOS/Android device tests.
 
 - Enduvo and Cerca’s source files have a nearly square display ratio despite their stored 1920×1080 dimensions. Re-exported both at 1056×1080 with square pixels, regenerated their posters, and preserved their scene timings. The earlier 16:9 exports had stretched the picture horizontally.
 - Their cards now follow the recordings’ proportions and fit within the available height on desktop, tablet and phone layouts. The playback dialog also follows the film’s natural proportions. Verified copy blocks 01/02/03, the final stretch, Less motion, and viewport sizes down to 320×568. See [media notes](media/README.md) for the source metadata.
+
+### Mobile and fallback review
+
+- Found that the earlier no-script page had no video source URLs and inactive film/motion controls. Native video sources and film links are now the default; JavaScript adds nearby preloading, scrubbing and the playback dialog. Less motion and failed/blocked scripts share the readable base layout.
+- Short phones now show full-width native videos instead of squeezing square recordings down to 70px wide. Sticky reading-layout videos are height-limited on desktop to keep their native controls visible. Film, project and next links have larger mobile tap targets.
+- Checked normal and script-blocked layouts at 320×568, 360×640, 375×667, 390×844, 430×932, 768×1024 and 844×390. Confirmed all seven projects have native controls and all three copy blocks in the reading layout, with no horizontal page overflow. Checked sticky native controls at 1280×720 and the hero/About layout at 320px wide.
+- Verified all three scroll blocks for all seven projects at 390×844, mobile dropdown descriptions/selection, dialog playback and close, and toggling Less motion in both directions. Script-blocked checks included actual native video playback, the scrollable project dropdown, and native back-to-top navigation.
+- The no-script preview uses `script-src 'none'`; these checks do not change the browser's global JavaScript setting. System reduced-motion handling remains connected to `prefers-reduced-motion`, but the OS preference was not changed during this review. Physical iOS/Android testing remains separate from the browser viewport checks.

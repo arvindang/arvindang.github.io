@@ -2,7 +2,7 @@ import { createVideoScrubber } from './vendor/scroll-video-scrubber.js';
 
 const projects = [...document.querySelectorAll('.project:not([hidden])')];
 const mediaQuery = matchMedia('(prefers-reduced-motion: reduce)');
-const shortViewport = matchMedia('(max-height: 560px)');
+const shortViewport = matchMedia('(max-height: 600px), (max-width: 700px) and (max-height: 700px)');
 const motionButton = document.querySelector('#motion-toggle');
 const dialog = document.querySelector('#film-dialog');
 const dialogVideo = document.querySelector('#dialog-video');
@@ -43,7 +43,9 @@ function showProgress(project, progress) {
 
 function loadVideo(project) {
   const video = project.querySelector('video');
-  if(!video.getAttribute('src')) { video.src=video.dataset.src; video.preload='auto'; video.load(); }
+  // A real source keeps native playback available without JavaScript.
+  // Defer preloading until the project is near the viewport.
+  if(video.preload==='none') { video.preload='auto'; video.load(); }
   return video;
 }
 
@@ -115,7 +117,9 @@ for(const project of projects) {
 }
 
 const sources={evaluate:'https://github.com/arvindang/evaluate-product-designers',math:'https://github.com/arvindang/math-collective-skills'};
-for(const button of document.querySelectorAll('[data-watch]')) button.addEventListener('click',()=>{
+for(const button of document.querySelectorAll('[data-watch]')) button.addEventListener('click',event=>{
+  if(typeof dialog.showModal!=='function') return;
+  event.preventDefault();
   const id=button.dataset.watch;
   const project=document.getElementById(id);
   document.querySelector('#film-dialog-title').textContent=project?project.querySelector('.project-title').textContent.replace(/^\s*\d+\s*\/\s*\d+/,'').trim():id==='evaluate'?'Evaluate Product Designers':'MATH Founder Stack';
@@ -137,3 +141,4 @@ let heroFrame=0;
 const collage=document.querySelector('.hero-collage');
 function moveHero(){heroFrame=0;if(isReduced)return;const p=clamp(scrollY/650);collage.style.transform=`translateY(${30-p*65}px) rotate(${p*5}deg)`;}
 addEventListener('scroll',()=>{if(scrollY<1000&&!heroFrame)heroFrame=requestAnimationFrame(moveHero);},{passive:true});
+document.documentElement.classList.add('js-ready');
