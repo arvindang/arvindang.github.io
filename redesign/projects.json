@@ -7,7 +7,7 @@
     "color": "#f4e6a5",
     "ink": "#332c18",
     "angle": -7,
-    "source": "Public website capture",
+    "source": "Website walkthrough",
     "beats": [
       [
         "Expertise,\nwith a new address.",
@@ -32,7 +32,7 @@
     "color": "#bed8f0",
     "ink": "#1f334b",
     "angle": 6,
-    "source": "Interactive public demo",
+    "source": "App walkthrough",
     "beats": [
       [
         "Go on.\nTake it apart.",
@@ -57,7 +57,7 @@
     "color": "#c8dfbc",
     "ink": "#263b23",
     "angle": -6,
-    "source": "Live public profile",
+    "source": "App walkthrough",
     "beats": [
       [
         "You know\na place.",
@@ -107,7 +107,7 @@
     "color": "#d7cdf3",
     "ink": "#35294c",
     "angle": -5,
-    "source": "Public product-page capture",
+    "source": "Product page + app screenshot",
     "beats": [
       [
         "My eyes would\nlike a break.",
@@ -132,7 +132,7 @@
     "color": "#ebeadf",
     "ink": "#31342b",
     "angle": 6,
-    "source": "Live chart playground",
+    "source": "Charts + evidence",
     "beats": [
       [
         "A chart can\ntravel light.",

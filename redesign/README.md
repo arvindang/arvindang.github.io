@@ -21,32 +21,32 @@ The name is **Arvin Dang** and the domain/wordmark is **arv.in**, with the red d
 - Sticky project headings, a persistent project menu, and direct jumps between sections.
 - A quieter mode with all copy visible, ordinary video controls, and shorter sections. Screens at most 560px high use this reading layout automatically; taller screens retain the manual choice. System reduced-motion preferences also take precedence.
 - A full-size film dialog, keyboard focus, Escape to close, and native playback.
-- Current public recordings throughout; no simulated native-app interfaces.
+- Owner-provided Enduvo, Embed3D, and Cerca recordings, alongside public-page captures for the remaining work.
 
 The copy and order are proposed for review. Specific contribution credits are strongest for Enduvo (website redesign) and Embed3D (designed and built), which Arvin explicitly confirmed. Confirm the final contribution/collaborator wording across the rest of the collection before publication.
 
 ## Capture inventory
 
-The Embed3D edit removes the intermediate loading screen before the ready lesson preview.
+Enduvo, Embed3D, and Cerca now use the recordings Arvin supplied on September 11. Embed3D and Cerca are edited into three scenes within one seekable file each; Embed3D’s audio is removed. Murmur, Tufte, and the scrubber have fresh captures with visible action throughout all three copy blocks.
 
-The MP4s were created from timestamped browser frame captures (approximately 10–11 captured frames per second), then encoded at 30 fps with a keyframe every eight frames. The encoding repeats frames as needed; it does not turn the captures into native 30 fps recordings. These are usable for motion/layout review. A production pass should use smoother original recordings where interaction fidelity matters.
+All six updated files are silent H.264 at 30 fps with frequent keyframes and faststart. The three fresh browser captures use ten captured frames per output second; encoding at 30 fps does not make them native 30 fps recordings. See [the media edit notes](media/README.md) for durations, source ranges, and scene mapping.
 
 | File | Source | What was recorded | Limits |
 |---|---|---|---|
-| `media/enduvo.mp4` | https://enduvo.com/ | Hero motion and the opening scroll sequence | Website redesign; not a recording of the Enduvo application. |
-| `media/embed3d.mp4` | https://app.embed3d.io/demo | Manufacturing demo: slice axes and learner-facing preview | Public demo; not the full authenticated authoring product. The course is explicitly a simulated preview in the source. |
-| `media/cerca.mp4` | https://cerca.me/u/arvin | Public saved-place collection, search for Galit, and place detail/map | No signed-in saving or editing flow. |
+| `media/enduvo.mp4` | Arvin’s `Enduvo.mp4` | Full website traversal, 16.2 seconds | Website redesign; not the Enduvo application. |
+| `media/embed3d.mp4` | Arvin’s `Embed3D.mp4` | Actual app: editor, cockpit/explode, sharing and learner player; 36 seconds | Edited for pacing; audio, unrelated chat, loading and browser chrome removed. |
+| `media/cerca.mp4` | Arvin’s `Cerca.mp4` | Map/place, personal collection, and shared guide/map; 30 seconds | Edited from the supplied recording. |
 | `media/illustrative.mp4` | https://arv.in/illustrative/ | Public sample reader, moving between illustrated pages | The older public pipeline/sample, not the newer native beta app. |
-| `media/murmur.mp4` | https://arv.in/murmur/ | Public product page and current product screenshots | No native app interaction or speech captured. |
-| `media/tufte.mp4` | https://tufte.ai/ | Live playground changing between column, line, and bar charts | The public renderer, not a separate recorded evidence-verification session. |
+| `media/murmur.mp4` | https://arv.in/murmur/ | Fresh page walkthrough with the existing app screenshot inset at bottom-right; 18 seconds | No native app interaction or speech captured. |
+| `media/tufte.mp4` | https://tufte.ai/ | Bar/column/line views using the same rows, then the published evidence example; 18.1 seconds | The final scene shows the site’s example, not a new verification run. |
 | `media/dasha.mp4` | https://dasha.fm/ | Current retirement notice and Out Loud introduction | The astrology app is retired on the public site. This clip is a static page, not the former application. |
-| `media/scrubber.mp4` | https://arv.in/scroll-video-scrubber/ | Live demo while scrolling through video and progress | Demo uses MDN’s CC0 Flower footage; it is not Arvin’s original cinematography. |
+| `media/scrubber.mp4` | https://arv.in/scroll-video-scrubber/ | Demo progressing to 100%, with a backward scrub midway; 18.1 seconds | Demo uses MDN’s CC0 Flower footage; it is not Arvin’s original cinematography. |
 | `media/evaluate.mp4` | https://github.com/arvindang/evaluate-product-designers | Public repository/guide scroll | Documentation capture, not an evaluation of a real person. |
 | `media/math.mp4` | https://github.com/arvindang/math-collective-skills | Public repository/guide scroll | Documentation capture, not a live advisory session. |
 
 Dasha-FM is hidden from the portfolio, navigation, and active project count as of September 11. Its source entry and captures are retained for reference. The seven visible project entries each have a short description in the project menu.
 
-Every film also has an opening JPEG and a final/detail JPEG. Public source assets include Illustrative’s sample pages, Murmur’s widget/settings images, and the scrubber’s Flower source video. The committed MP4s and stills are self-contained. Raw browser frames and timestamps remain in the original Codex task workspace under `work/recordings`; they are not required to run this draft.
+Every film also has an opening JPEG and a final/detail JPEG. Public source assets include Illustrative’s sample pages, Murmur’s widget/settings images, and the scrubber’s Flower source video. The committed MP4s and stills are self-contained. Original browser frames remain in the initial task workspace under `work/recordings`; the September 11 recaptures were assembled in temporary working folders. The committed clips and edit notes are sufficient to run and review the draft. Desktop source recordings were left unchanged.
 
 ## Your plugin
 
@@ -86,3 +86,10 @@ These are browser viewport checks, not physical iOS/Android device tests.
 - Header controls share a 44px height and the same label alignment. The project dropdown includes a sentence for each of the seven featured projects and scrolls within short viewports.
 - Dasha-FM is hidden in HTML and marked hidden in `projects.json`; the scrubber setup ignores hidden projects. Tufte links directly to Scroll Video Scrubber, and visible counts run from 01 / 07 through 07 / 07.
 - Checked the hero and menu at 1039×1304, 390×844, and 320×568. Verified mobile footer pinning, dropdown scrolling and selection, hidden media loading, and the film dialog title after renumbering.
+
+### September 11 recording refresh
+
+- Diagnosed the apparent early stops as frozen source footage: the previous Murmur, Tufte, and scrubber clips held their last view from 1.37s, 4.00s, and 1.87s respectively. Their remaining duration was static; the plugin continued seeking correctly.
+- Replaced six films and both corresponding posters for each. Illustrative’s files and section remain byte-for-byte unchanged.
+- Verified silent media, complete decoding, HTTP byte ranges, and nonzero visual change in every copy block. Tested 01/02/03 plus 97% progress and reverse seeking on desktop; repeated 15%, 50%, 85%, and 97% on a 390×844 viewport. The scrubber also reached its final frame at 99.9% progress.
+- Checked Murmur’s inset in the page, the Less motion reading layout, and the playback dialog. Dialog captions now describe the specific recording, including the new app walkthroughs.

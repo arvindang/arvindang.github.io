@@ -119,6 +119,7 @@ for(const button of document.querySelectorAll('[data-watch]')) button.addEventLi
   const id=button.dataset.watch;
   const project=document.getElementById(id);
   document.querySelector('#film-dialog-title').textContent=project?project.querySelector('.project-title').textContent.replace(/^\s*\d+\s*\/\s*\d+/,'').trim():id==='evaluate'?'Evaluate Product Designers':'MATH Founder Stack';
+  document.querySelector('#dialog-capture-note').textContent=project?project.querySelector('.film-caption>span').textContent+'.':'Public guide walkthrough.';
   const link=document.querySelector('#dialog-source');
   link.href=project?project.querySelector('.visit-link').href:sources[id];
   dialogVideo.src=`./media/${id}.mp4`; dialogVideo.poster=`./media/${id}.jpg`;
