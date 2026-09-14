@@ -22,15 +22,19 @@
       <p class="privacy__eyebrow">Privacy</p>
       <h1>Small site, small footprint.</h1>
       <p class="lead">
-        Arv.in uses limited, cookieless audience measurement to understand which pages are useful and whether the site performs well.
+        Arv.in and its project pages use limited, cookieless audience measurement to understand which pages are useful and how well they perform.
       </p>
 
       <h2>What is measured</h2>
       <p>
-        <a href="https://posthog.com" target="_blank" rel="noopener">PostHog</a> records anonymous page views, page duration, broad browser and device details, referral origins, and outbound link or file-download destinations.
+        <a href="https://developers.cloudflare.com/web-analytics/" target="_blank" rel="noopener">Cloudflare Web Analytics</a> measures visits, page views, referring pages, country, broad browser and device details, page-load times, and Core Web Vitals. These statistics help improve the site.
       </p>
       <p>
-        Analytics does not write cookies or local-storage identifiers, create person profiles, record sessions, capture form input, or store IP addresses. URL query strings and fragments are removed before events are sent, and referrers are reduced to their origin.
+        Analytics does not set cookies or use local storage, session storage, or other persistent browser identifiers. It does not track you across sites, create visitor profiles, record sessions, or collect what you type into forms. We do not send custom link-click or file-download events.
+      </p>
+
+      <p>
+        Cloudflare receives page and referrer information and browser performance measurements. Its Web Analytics service does not log URL query strings. Referring page paths may be included when your browser provides them. Cloudflare documents the data its beacon collects in its <a href="https://developers.cloudflare.com/speed/observatory/rum-beacon/" target="_blank" rel="noopener">measurement reference</a>.
       </p>
 
       <h2>Your browser controls</h2>
@@ -38,7 +42,16 @@
         Analytics is not loaded when your browser sends a Global Privacy Control or Do Not Track signal. These controls can be enabled in supported browser or privacy-extension settings.
       </p>
 
-      <p class="privacy__updated">Updated July 16, 2026</p>
+      <p>
+        The site also works with JavaScript or analytics requests blocked. Local previews are never measured.
+      </p>
+
+      <h2>Other services</h2>
+      <p>
+        This notice describes website analytics. Project apps, optional signup forms, downloads, and external websites may have their own privacy practices. Information you choose to submit to a signup form is separate from analytics.
+      </p>
+
+      <p class="privacy__updated">Updated September 14, 2026</p>
     </article>
   </div>
 </main>

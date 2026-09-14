@@ -56,17 +56,91 @@ function loadVideo(project) {
 
 function enableProject(project) {
   const video=loadVideo(project);
-  if(isReduced || controllers.has(project)) return;
-  const controller=createVideoScrubber({
-    root:project.querySelector('.runway'),
-    video, sticky:project.querySelector('.stage'),
-    progress:project.querySelector('[data-svs-progress]'),
-    onProgress:p=>showProgress(project,p),
-    // A failed seek can recover; only a media failure needs the fallback.
-    onError:()=>{if(video.error) project.querySelector('.film-card').classList.add('media-error');}
-  });
-  controllers.set(project,controller);
-  showProgress(project,controller.progress);
+  if(isReduced) return;
+  if(!controllers.has(project)) controllers.set(project,manageProjectVideo(project,video));
+  controllers.get(project).update();
+}
+
+function manageProjectVideo(project, video) {
+  let scrubber=null;
+  let destroyed=false;
+  let recoveryTimer=0;
+  let recoveries=0;
+
+  function visible() {
+    const rect=video.getBoundingClientRect();
+    return !document.hidden&&rect.bottom>0&&rect.top<innerHeight&&rect.right>0&&rect.left<innerWidth;
+  }
+
+  function clearRecovery() {
+    clearTimeout(recoveryTimer);
+    recoveryTimer=0;
+  }
+
+  function watchSeek() {
+    if(destroyed||!scrubber||recoveryTimer||recoveries>=1||video.error||!video.seeking||!visible()) return;
+    recoveryTimer=setTimeout(recoverSeek,2500);
+  }
+
+  function recoverSeek() {
+    recoveryTimer=0;
+    if(destroyed||video.error||!video.seeking||!visible()) return;
+    // A seek waiting for network data is not a decoder stall. Give it time.
+    const time=video.currentTime;
+    let buffered=false;
+    for(let i=0;i<video.buffered.length;i++) {
+      if(time>=video.buffered.start(i)&&time<video.buffered.end(i)) buffered=true;
+    }
+    if(!buffered) { watchSeek(); return; }
+    // An unfinished seek otherwise blocks every subsequent upstream update.
+    // Reload only this film, once per controller, then resume at the scroll position.
+    recoveries++;
+    video.pause();
+    scrubber.destroy();
+    scrubber=null;
+    video.load();
+  }
+
+  function update() {
+    if(destroyed) return;
+    if(document.hidden) { clearRecovery(); return; }
+    // Safari can expose duration before its player can seek. Wait for a decoded
+    // frame, including on cold loads, restored scroll positions and media reloads.
+    // https://bugs.webkit.org/show_bug.cgi?id=201216
+    if(!scrubber&&video.readyState>=2&&!video.seeking&&Number.isFinite(video.duration)&&video.duration>0) {
+      scrubber=createVideoScrubber({
+        root:project.querySelector('.runway'),
+        video, sticky:project.querySelector('.stage'),
+        progress:project.querySelector('[data-svs-progress]'),
+        onProgress:p=>showProgress(project,p),
+        onError:()=>{if(video.error) project.querySelector('.film-card').classList.add('media-error');}
+      });
+    }
+    scrubber?.update();
+    watchSeek();
+  }
+
+  const listeners=[
+    [video,'loadeddata',update],
+    [video,'canplay',update],
+    [video,'seeking',watchSeek],
+    [video,'seeked',clearRecovery],
+    [video,'error',clearRecovery],
+    [window,'scroll',watchSeek],
+    [window,'pageshow',update],
+    [document,'visibilitychange',update]
+  ];
+  for(const [target,type,handler] of listeners) target.addEventListener(type,handler,{passive:true});
+
+  return {
+    update,
+    destroy() {
+      destroyed=true;
+      clearRecovery();
+      for(const [target,type,handler] of listeners) target.removeEventListener(type,handler);
+      if(scrubber) { video.pause(); scrubber.destroy(); }
+    }
+  };
 }
 
 const nearViewport = new IntersectionObserver(entries=>{

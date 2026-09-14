@@ -32,8 +32,10 @@ select the reading layout; larger screens also have a Less motion button.
   classic-script wrapper. See [vendor notes](vendor/README.md).
 - `styles.css`, `navigation.css`, `fallbacks.css`, `fonts.css` — presentation.
 - `media/`, `fonts/` — local recordings, posters, and licensed fonts.
-- `privacy/index.html`, `analytics.js` — existing privacy copy and analytics.
-  Analytics only loads on the production domains and respects DNT/GPC.
+- `privacy/index.html`, `analytics.js` — Cloudflare Web Analytics and its privacy
+  notice. The cookieless beacon only loads on the production domains, respects
+  DNT/GPC, and does not send custom link or download events. See the
+  [analytics setup and rollout notes](docs/cloudflare-analytics.md).
 - `qr/index.html`, `qr/code.svg` — a phone-friendly page for showing your QR code
   at conferences and meetups. It opens `https://arv.in` when scanned. The header
   shortcut opens it directly, including from a local file preview. The SVG is
@@ -84,3 +86,34 @@ header shortcut and return link work, and file/HTTP previews work with scripts
 enabled or disabled. Apple's Vision barcode reader decoded every rendered
 screenshot as `https://arv.in`. The Pages artifact includes the QR page and both
 of its assets. These are screenshot checks, not physical camera tests.
+
+## Intermittent video freeze — September 14, 2026
+
+The app now waits for frame data (`readyState >= HAVE_CURRENT_DATA`) before
+creating a scrubber. Previously it could seek as soon as duration/metadata was
+available. WebKit has documented a [similar early-seek timing issue](https://bugs.webkit.org/show_bug.cgi?id=201216)
+in its native player, although that older report concerns HLS rather than these
+MP4s. A controlled Chromium test that stalled an early seek reproduced a film
+remaining at its first frame while the page reached 60% scroll progress. With
+the readiness check, the same test reaches 11.38 seconds of the 19-second film.
+
+If an active, visible film stays in `seeking` for 2.5 seconds and its requested
+time is already buffered, the app reloads that film once and resynchronizes it
+to the current scroll position. It waits for unbuffered network data, avoids
+background/offscreen reloads, and removes pending work when Less motion is
+selected. Returning to a tab or restoring a page also requests a fresh update.
+The vendored scrubber implementation and license are unchanged.
+
+Run the dependency-free lifecycle regression tests with:
+
+```sh
+node --test tests/video-loading.test.cjs
+```
+
+All 10 lifecycle tests passed. Chromium checks passed for all seven films at
+five forward/reverse positions over HTTP and direct `file://`, the motion
+toggle, film dialog, and phone/short-screen layouts. An injected unfinished
+seek recovered with exactly one film reload. These are simulated failure and
+Chromium checks: desktop Safari still needs hands-on confirmation because
+Safari remote automation is disabled and the separate WebKit test browser
+could not complete startup. No Safari settings were changed.

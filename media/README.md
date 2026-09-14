@@ -17,7 +17,7 @@ Illustrative is unchanged. Dasha remains hidden.
 
 Original files on Arvin’s Desktop were left intact. All output timestamps below are seconds.
 
-- **enduvo-trimmed.mp4 (September 14):** source 0–19, original speed. The complete useful traversal is retained, with only the final partial frame omitted. Poster at output 3; detail at 9.4.
+- **enduvo-trimmed.mp4 (September 14):** source 0–19, original speed. The complete useful traversal is retained, with the final 0.04 seconds omitted. Poster at output 3; detail at 9.4.
 - **Embed3D.mp4:** source 12–20 becomes output 0–6; source 31–37 becomes 6–12; source 58–82 becomes 12–24; source 196–208 becomes 24–30; source 258–270 becomes 30–36. Removes the unrelated chat detour, loading and long pauses. Audio is removed completely. Crop `1734:976:0:94` removes browser chrome before scaling. Poster at output 0.2; detail at 17.
 - **cerca-trimmed.mp4 (September 14):** source 0–17 becomes output 0–10; source 17–35 becomes 10–20; source 35–49.73 becomes 20–30. Keeps the map/place overview, saving and rating flow, and the collection in another city while tightening the pace. Poster at output 2; detail at 28.
 
@@ -38,3 +38,9 @@ These outputs are 1280×720, silent H.264/yuv420p, 30 fps, CRF 20, faststart, wi
 All six clips decode, have no audio track, and contain visible image changes within each of the three copy blocks. Desktop and mobile browser checks confirmed the expected video times at each block, near the end of the final block, and during reverse scrolling. Illustrative’s media files and HTML section were compared against the prior commit and remain unchanged. Physical Safari/iOS and Chrome/Android checks are still separate from these browser viewport tests.
 
 After the aspect correction, checked Enduvo and Cerca at 1039×1304, 1440×900, 768×1024, 390×844 and 375×667; also checked Enduvo at 320×568. Verified the rendered video proportions, three copy blocks and final stretch, reachable controls, no horizontal overflow, the playback dialog and Less motion.
+
+## Widescreen replacement validation — September 14
+
+Both replacements fully decode, have no audio track, and place the MP4 metadata before the media data for progressive loading. Their 30 fps exports have a keyframe every ten frames. Contact sheets and posters were inspected after encoding.
+
+Chromium checks over the local HTTP preview passed at 1440×900, 1039×1304, 768×1024 and 390×844: both films seek through all three story blocks, near the end, and backward, with the same card widths as Embed3D, correct display proportions, reachable controls and no horizontal overflow. Both playback dialogs and Less motion work. At 375×667 and 320×568, the reading layout retains native video controls without horizontal overflow. The broad-film layout was visually checked on a tall screen and phone. The browser tool blocked direct `file://` navigation, so that mode was not rerun for this media replacement; script loading and application code are unchanged.
