@@ -1,3 +1,7 @@
+> Historical review notes from September 10–11, 2026. The draft has since moved
+> from `redesign/` to the repository root and replaced Middleman. For current
+> preview, script loading, and deployment instructions, see [README](../README.md).
+
 # Arvin — a few things I couldn’t leave alone
 
 A local, static portfolio draft, September 10, 2026. This supersedes the Paper directions for the current review.
@@ -32,7 +36,7 @@ The copy and order are proposed for review. Specific contribution credits are st
 
 Enduvo, Embed3D, and Cerca now use the recordings Arvin supplied on September 11. Embed3D and Cerca are edited into three scenes within one seekable file each; Embed3D’s audio is removed. Murmur, Tufte, and the scrubber have fresh captures with visible action throughout all three copy blocks.
 
-All six updated files are silent H.264 at 30 fps with frequent keyframes and faststart. The three fresh browser captures use ten captured frames per output second; encoding at 30 fps does not make them native 30 fps recordings. See [the media edit notes](media/README.md) for durations, source ranges, and scene mapping.
+All six updated files are silent H.264 at 30 fps with frequent keyframes and faststart. The three fresh browser captures use ten captured frames per output second; encoding at 30 fps does not make them native 30 fps recordings. See [the media edit notes](../media/README.md) for durations, source ranges, and scene mapping.
 
 | File | Source | What was recorded | Limits |
 |---|---|---|---|
@@ -100,7 +104,7 @@ These are browser viewport checks, not physical iOS/Android device tests.
 ### Recording aspect correction
 
 - Enduvo and Cerca’s source files have a nearly square display ratio despite their stored 1920×1080 dimensions. Re-exported both at 1056×1080 with square pixels, regenerated their posters, and preserved their scene timings. The earlier 16:9 exports had stretched the picture horizontally.
-- Their cards now follow the recordings’ proportions and fit within the available height on desktop, tablet and phone layouts. The playback dialog also follows the film’s natural proportions. Verified copy blocks 01/02/03, the final stretch, Less motion, and viewport sizes down to 320×568. See [media notes](media/README.md) for the source metadata.
+- Their cards now follow the recordings’ proportions and fit within the available height on desktop, tablet and phone layouts. The playback dialog also follows the film’s natural proportions. Verified copy blocks 01/02/03, the final stretch, Less motion, and viewport sizes down to 320×568. See [media notes](../media/README.md) for the source metadata.
 
 ### Mobile and fallback review
 

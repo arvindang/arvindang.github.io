@@ -1,4 +1,9 @@
-import { createVideoScrubber } from './vendor/scroll-video-scrubber.js';
+(function () {
+'use strict';
+
+// Leave the native reading layout intact if the scrubber script cannot load.
+if (!window.ScrollVideoScrubber) return;
+const { createVideoScrubber } = window.ScrollVideoScrubber;
 
 const projects = [...document.querySelectorAll('.project:not([hidden])')];
 const mediaQuery = matchMedia('(prefers-reduced-motion: reduce)');
@@ -142,3 +147,5 @@ const collage=document.querySelector('.hero-collage');
 function moveHero(){heroFrame=0;if(isReduced)return;const p=clamp(scrollY/650);collage.style.transform=`translateY(${30-p*65}px) rotate(${p*5}deg)`;}
 addEventListener('scroll',()=>{if(scrollY<1000&&!heroFrame)heroFrame=requestAnimationFrame(moveHero);},{passive:true});
 document.documentElement.classList.add('js-ready');
+
+})();

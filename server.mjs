@@ -6,10 +6,15 @@ import path from 'node:path';
 const root=path.dirname(fileURLToPath(import.meta.url));
 const noScripts=process.argv.includes('--no-js');
 const port=noScripts?4174:4173;
-const types={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.json':'application/json','.svg':'image/svg+xml','.jpg':'image/jpeg','.png':'image/png','.webp':'image/webp','.mp4':'video/mp4','.ttf':'font/ttf','.md':'text/plain; charset=utf-8'};
+const types={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.json':'application/json','.svg':'image/svg+xml','.jpg':'image/jpeg','.png':'image/png','.webp':'image/webp','.mp4':'video/mp4','.ttf':'font/ttf','.pdf':'application/pdf','.txt':'text/plain; charset=utf-8','.md':'text/plain; charset=utf-8'};
 createServer(async(req,res)=>{try{
  const pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
- const filename=path.resolve(root,'.'+(pathname==='/'?'/index.html':pathname));
+ let filename=path.resolve(root,'.'+pathname);
+ if(filename!==root&&!filename.startsWith(root+path.sep)){res.writeHead(403).end();return;}
+ if((await stat(filename)).isDirectory()) {
+   if(!pathname.endsWith('/')){res.writeHead(301,{'Location':pathname+'/'+new URL(req.url,'http://localhost').search}).end();return;}
+   filename=path.join(filename,'index.html');
+ }
  if(!filename.startsWith(root+path.sep)){res.writeHead(403).end();return;}
  const info=await stat(filename);if(!info.isFile()){res.writeHead(404).end();return;}
  const headers={'Content-Type':types[path.extname(filename)]||'application/octet-stream','Accept-Ranges':'bytes','Cache-Control':'no-cache'};

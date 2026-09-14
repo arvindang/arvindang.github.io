@@ -1,3 +1,7 @@
+// @arvindang/scroll-video-scrubber, upstream revision c67adc9 (MIT).
+// Classic-script wrapper for file:// previews; implementation unchanged.
+(function () {
+"use strict";
 // src/index.ts
 var ROOT_SELECTOR = "[data-video-scrubber]";
 var VIDEO_SELECTOR = "[data-svs-video], video";
@@ -361,8 +365,5 @@ function autoInitVideoScrubbers(options = {}) {
     return scrubber;
   });
 }
-export {
-  autoInitVideoScrubbers,
-  createVideoScrubber
-};
-//# sourceMappingURL=index.js.map
+window.ScrollVideoScrubber = { autoInitVideoScrubbers, createVideoScrubber };
+})();
