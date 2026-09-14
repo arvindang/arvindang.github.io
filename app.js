@@ -1,6 +1,37 @@
 (function () {
 'use strict';
 
+// Both disclosures work natively; enhance dismissal independently of the films.
+const headerMenus = [...document.querySelectorAll('.site-header details')];
+function closeHeaderMenu(menu) {
+  if (!menu.open) return;
+  if (menu.contains(document.activeElement)) menu.querySelector('summary').focus({preventScroll:true});
+  menu.open = false;
+}
+for (const menu of headerMenus) {
+  menu.addEventListener('toggle', () => {
+    if (menu.open) headerMenus.forEach(other => {
+      if (other !== menu) closeHeaderMenu(other);
+    });
+  });
+  for (const link of menu.querySelectorAll('a')) {
+    link.addEventListener('click', () => closeHeaderMenu(menu));
+  }
+}
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') headerMenus.forEach(closeHeaderMenu);
+});
+document.addEventListener('click', event => {
+  headerMenus.forEach(menu => {
+    if (!menu.contains(event.target)) closeHeaderMenu(menu);
+  });
+});
+document.addEventListener('focusin', event => {
+  headerMenus.forEach(menu => {
+    if (!menu.contains(event.target)) closeHeaderMenu(menu);
+  });
+});
+
 // Leave the native reading layout intact if the scrubber script cannot load.
 if (!window.ScrollVideoScrubber) return;
 const { createVideoScrubber } = window.ScrollVideoScrubber;
@@ -11,7 +42,6 @@ const shortViewport = matchMedia('(max-height: 600px), (max-width: 700px) and (m
 const motionButton = document.querySelector('#motion-toggle');
 const dialog = document.querySelector('#film-dialog');
 const dialogVideo = document.querySelector('#dialog-video');
-const menu = document.querySelector('.work-menu');
 const controllers = new Map();
 let userWantsLessMotion = false;
 let isReduced = mediaQuery.matches;
@@ -212,9 +242,6 @@ for(const button of document.querySelectorAll('[data-watch]')) button.addEventLi
 document.querySelector('#close-film').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('close',()=>{dialogVideo.pause();dialogVideo.removeAttribute('src');dialogVideo.load();});
 dialog.addEventListener('click',event=>{if(event.target===dialog){const rect=dialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)dialog.close();}});
-for(const link of menu.querySelectorAll('a')) link.addEventListener('click',()=>{menu.open=false;});
-document.addEventListener('keydown',event=>{if(event.key==='Escape')menu.open=false;});
-document.addEventListener('click',event=>{if(!menu.contains(event.target))menu.open=false;});
 
 let heroFrame=0;
 const collage=document.querySelector('.hero-collage');
