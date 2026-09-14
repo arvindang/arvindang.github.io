@@ -1,0 +1,30 @@
+/* Native media, links and the reading layout work before JavaScript loads. */
+:root:not(.js-ready) #motion-toggle {display:none}
+:root:not(.enhanced) {scroll-behavior:auto}
+:root:not(.enhanced) .hero-cta,
+:root:not(.enhanced) .contact-title svg {transition:none}
+:root:not(.enhanced) .hero-cta:hover,
+:root:not(.enhanced) .contact-title:hover svg {transform:none}
+
+/* Film links open the MP4 directly; JavaScript adds the playback dialog. */
+.watch-button {display:inline-flex;align-items:center;min-height:44px}
+.tool-preview {display:flex;align-items:center;width:fit-content;min-height:44px}
+
+/* A larger tap target without changing the project footer's type or position. */
+.stage-floor>a {position:relative}
+.stage-floor>a::after {content:'';position:absolute;inset:-17px -4px}
+
+/* Keep native controls in view when a reading-layout film is sticky. */
+@media (min-width:701px) and (min-height:601px) {
+  :root:not(.enhanced) .media-zone {
+    width:min(100%,calc((100svh - 280px) * var(--film-aspect,1.7777778)));
+    margin-inline:auto;
+  }
+}
+
+@media (max-width:700px) {
+  .visit-link {display:inline-flex;align-items:center;justify-content:flex-end;min-height:44px}
+  .next-link {min-height:44px}
+  :root:not(.enhanced) .beat-controls {justify-content:flex-start}
+  :root:not(.enhanced) .visit-link {margin-left:0;padding-left:0;text-align:left}
+}

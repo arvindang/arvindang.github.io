@@ -1,0 +1,202 @@
+[
+  {
+    "id": "enduvo",
+    "name": "Enduvo",
+    "kind": "Website redesign",
+    "url": "https://enduvo.com/",
+    "color": "#f4e6a5",
+    "ink": "#332c18",
+    "angle": -7,
+    "source": "Website walkthrough",
+    "beats": [
+      [
+        "Expertise,\nwith a new address.",
+        "I redesigned Enduvo\u2019s website: a new home for a platform built around human expertise."
+      ],
+      [
+        "A little movement.\nA clearer story.",
+        "Scroll-led moments bring the product into focus, one idea at a time."
+      ],
+      [
+        "The whole thing\nhas to hang together.",
+        "Type, pacing, product, and the path through it all. I like working across the whole picture."
+      ]
+    ],
+    "description": "A new website for a platform built around human expertise."
+  },
+  {
+    "id": "embed3d",
+    "name": "Embed3D",
+    "kind": "Designed & built",
+    "url": "https://www.embed3d.io/",
+    "color": "#bed8f0",
+    "ink": "#1f334b",
+    "angle": 6,
+    "source": "App walkthrough",
+    "beats": [
+      [
+        "Go on.\nTake it apart.",
+        "I designed and built Embed3D, a tool for creating interactive 3D lessons."
+      ],
+      [
+        "Some things make\nmore sense in 3D.",
+        "Turn the model. Slice into it. Find the part you need to understand."
+      ],
+      [
+        "And then,\nput it anywhere.",
+        "Bring the lesson into a website or learning platform. A complicated object, made approachable."
+      ]
+    ],
+    "description": "Create interactive 3D lessons and embed them anywhere."
+  },
+  {
+    "id": "cerca",
+    "name": "Cerca",
+    "kind": "Places & people",
+    "url": "https://cerca.me/u/arvin",
+    "color": "#c8dfbc",
+    "ink": "#263b23",
+    "angle": -6,
+    "source": "App walkthrough",
+    "beats": [
+      [
+        "You know\na place.",
+        "The places I want to go tend to come from people whose taste I trust."
+      ],
+      [
+        "Now you know\nwhere you put it.",
+        "Cerca gives those recommendations a home. Search the collection and open a place."
+      ],
+      [
+        "Taste is personal.\nSo is the map.",
+        "A place is more useful when you know who saved it. Explore my actual collection."
+      ]
+    ],
+    "description": "Save places and recommendations from people whose taste you trust."
+  },
+  {
+    "id": "illustrative",
+    "name": "Illustrative",
+    "kind": "Stories & software",
+    "url": "https://arv.in/illustrative/",
+    "color": "#f4cbb5",
+    "ink": "#492c28",
+    "angle": 5,
+    "source": "Public sample reader",
+    "beats": [
+      [
+        "What if a book\ncould become a comic?",
+        "A question that became Illustrative: software for turning stories into illustrated books."
+      ],
+      [
+        "Page by page.\nPanel by panel.",
+        "Characters, compositions, and words have to hold together across a whole story."
+      ],
+      [
+        "The output\nis the fun part.",
+        "A finished book you can read, share, and export. An idea becomes something you can hold onto."
+      ]
+    ],
+    "description": "Turn books and stories into illustrated comics."
+  },
+  {
+    "id": "murmur",
+    "name": "Murmur",
+    "kind": "A small Mac utility",
+    "url": "https://arv.in/murmur/",
+    "color": "#d7cdf3",
+    "ink": "#35294c",
+    "angle": -5,
+    "source": "Product page + app screenshot",
+    "beats": [
+      [
+        "My eyes would\nlike a break.",
+        "Murmur reads text aloud from the apps you\u2019re already using."
+      ],
+      [
+        "A shortcut.\nThen, a voice.",
+        "A small menu bar app, close at hand. Press \u2318\u21e7L and listen."
+      ],
+      [
+        "I like small\nsolutions.",
+        "Especially the kind that fit into an existing habit. This one lives quietly in the menu bar."
+      ]
+    ],
+    "description": "Listen to text from the Mac apps you already use."
+  },
+  {
+    "id": "tufte",
+    "name": "Tufte",
+    "kind": "Charts & evidence",
+    "url": "https://tufte.ai/",
+    "color": "#ebeadf",
+    "ink": "#31342b",
+    "angle": 6,
+    "source": "Charts + evidence",
+    "beats": [
+      [
+        "A chart can\ntravel light.",
+        "Tufte makes portable charts for places where text already works."
+      ],
+      [
+        "Same rows.\nAnother way to see.",
+        "Change the chart, keep the data. Simple marks can carry a lot of meaning."
+      ],
+      [
+        "And you should\nbe able to check it.",
+        "Supporting evidence belongs with the chart. Clarity includes knowing where the numbers came from."
+      ]
+    ],
+    "description": "Make portable charts with evidence you can check."
+  },
+  {
+    "id": "dasha",
+    "name": "Dasha-FM",
+    "kind": "An earlier exploration",
+    "url": "https://dasha.fm/",
+    "color": "#ecd2cd",
+    "ink": "#4a2b36",
+    "angle": -4,
+    "source": "Current public retirement notice",
+    "beats": [
+      [
+        "A little room\nfor reflection.",
+        "Dasha was an exploration of astrology and daily reflection."
+      ],
+      [
+        "Some projects\nchange direction.",
+        "The astrology app is now retired. That is part of its story, too."
+      ],
+      [
+        "Still curious.\nStill making.",
+        "Today, the site points to Out Loud: one thoughtful question and a minute to answer it aloud. A smaller experiment in reflection."
+      ]
+    ],
+    "hidden": true
+  },
+  {
+    "id": "scrubber",
+    "name": "Scroll Video Scrubber",
+    "kind": "The tool behind this page",
+    "url": "https://github.com/arvindang/scroll-video-scrubber",
+    "color": "#f3cd44",
+    "ink": "#342919",
+    "angle": 7,
+    "source": "Live plugin demonstration",
+    "beats": [
+      [
+        "Plot twist.\nI made this part too.",
+        "The videos on this page move with a JavaScript plugin I built."
+      ],
+      [
+        "You scroll.\nTime follows.",
+        "Forward, backward, or right to that one frame. The page stays in your hands."
+      ],
+      [
+        "A small tool.\nA lot of possibilities.",
+        "Use it for your own idea. The source is open, and the scrolling is still just scrolling."
+      ]
+    ],
+    "description": "Scrub through video as you scroll, using native browser scrolling."
+  }
+]

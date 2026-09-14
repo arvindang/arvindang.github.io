@@ -1,0 +1,92 @@
+/* Keep the opening footer in view until the next section takes over. */
+.hero {
+  display:flex;
+  flex-direction:column;
+  min-height:calc(100svh - var(--header-height));
+}
+.hero-content {flex:1;width:100%;margin:0 auto}
+.hero-topline>span:only-child {display:block}
+.hero-footer {
+  position:sticky;
+  bottom:0;
+  z-index:5;
+  flex-shrink:0;
+  background:var(--paper);
+}
+
+/* All three navigation labels share the same line box and vertical center. */
+.site-header nav {height:100%}
+.site-header #motion-toggle,
+.work-menu summary,
+.hello-link {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:44px;
+  padding:0;
+  line-height:20px;
+}
+.work-menu summary {gap:8px}
+.menu-icon {width:14px;height:14px;flex-shrink:0}
+.work-menu[open] .menu-icon {transform:rotate(45deg)}
+.hello-link {position:relative;gap:6px;border:0}
+.hello-link svg {width:18px;height:18px;flex-shrink:0}
+.hello-link::after {
+  content:'';
+  position:absolute;
+  inset:auto 0 4px;
+  height:1px;
+  background:currentColor;
+}
+
+.project-menu {
+  top:calc(var(--header-height) - 8px);
+  width:440px;
+  min-width:0;
+  max-width:calc(100% - 72px);
+  max-height:calc(100svh - var(--header-height) - 16px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+}
+.project-menu a {
+  display:grid;
+  grid-template-columns:24px minmax(0,1fr);
+  align-items:start;
+  gap:16px;
+  padding:13px 12px;
+}
+.project-menu .menu-count {padding-top:2px;line-height:20px}
+.menu-copy strong {display:block;font-weight:500;font-size:19px;line-height:24px}
+.menu-copy p {margin:4px 0 0;font-size:13px;line-height:1.45;opacity:.75}
+.project[hidden] {display:none}
+
+/* Keep the in-person sharing shortcut available on phones, too. */
+.site-header .qr-link {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  flex-shrink:0;
+  border-radius:50%;
+}
+.qr-link svg {width:23px;height:23px}
+.qr-link:hover {background:#f3cd44}
+.work-menu summary .menu-label,
+.work-menu summary .menu-label-compact {padding:0;font-size:inherit}
+.work-menu summary .menu-label-compact {display:none}
+.work-menu[open] summary .menu-label,
+.work-menu[open] summary .menu-label-compact {transform:none}
+
+@media (max-width:700px) {
+  .hello-link {display:none}
+  .project-menu {right:18px;max-width:calc(100% - 36px);padding:12px}
+  .project-menu a {padding:11px 8px;gap:10px}
+  .menu-copy strong {font-size:17px;line-height:22px}
+  .menu-copy p {font-size:12px}
+}
+
+@media (max-width:380px) {
+  .work-menu summary .menu-label {display:none}
+  .work-menu summary .menu-label-compact {display:inline}
+}
