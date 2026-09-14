@@ -13,3 +13,4 @@
 - Preserve the scrubber's upstream implementation and license; its wrapper exposes `window.ScrollVideoScrubber`.
 - Keep `privacy/`, the existing analytics privacy controls, `CNAME`, and public assets working during changes.
 - The optional `server.mjs` is only for local HTTP and script-blocked previews.
+- `/qr/` is for Arvin to show people in person so they can scan and open `https://arv.in`. Keep the code large, still, high contrast, and easy to reach on a phone. It is not a link directory or a QR generator.

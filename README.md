@@ -34,6 +34,12 @@ select the reading layout; larger screens also have a Less motion button.
 - `media/`, `fonts/` — local recordings, posters, and licensed fonts.
 - `privacy/index.html`, `analytics.js` — existing privacy copy and analytics.
   Analytics only loads on the production domains and respects DNT/GPC.
+- `qr/index.html`, `qr/code.svg` — a phone-friendly page for showing your QR code
+  at conferences and meetups. It opens `https://arv.in` when scanned. The header
+  shortcut opens it directly, including from a local file preview. The SVG is
+  static, with the original code and a white margin; no QR service is required.
+  The code comes from the old page in commit `4e81b85`, with the
+  [four-module margin specified by DENSO WAVE](https://www.qrcode.com/en/howto/code.html).
 - `assets/` — retained public downloads and assets, including `NW_Syllabus.pdf`.
 - `projects.json` — reference content inventory; not fetched by the page.
 - `docs/design-notes.md`, `media/README.md` — design history and recording notes.
@@ -71,3 +77,10 @@ static-file collection commands passed. Media, fonts, existing analytics/privacy
 copy, and the scrubber implementation were checked against the prior revision.
 Safari/WebKit could not be verified because the available test browser did not
 start successfully. These checks did not deploy the site.
+
+The restored QR page was checked at eight viewport sizes, from 320×568 to
+1280×900, including landscape phones. The whole code remains visible, the
+header shortcut and return link work, and file/HTTP previews work with scripts
+enabled or disabled. Apple's Vision barcode reader decoded every rendered
+screenshot as `https://arv.in`. The Pages artifact includes the QR page and both
+of its assets. These are screenshot checks, not physical camera tests.

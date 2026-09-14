@@ -34,7 +34,7 @@ jobs:
         run: |
           mkdir -p "$SITE_DIR"
           cp index.html *.css *.js favicon.svg CNAME robots.txt .nojekyll "$SITE_DIR/"
-          cp -R fonts media vendor privacy assets "$SITE_DIR/"
+          cp -R fonts media vendor privacy qr assets "$SITE_DIR/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4

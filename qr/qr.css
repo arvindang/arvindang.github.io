@@ -1,0 +1,101 @@
+.qr-page {min-height:100svh}
+.qr-back {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  min-height:44px;
+  margin-left:auto;
+  font-size:14px;
+  white-space:nowrap;
+}
+.qr-back span {font-size:20px}
+.qr-back:hover {text-decoration:underline;text-underline-offset:5px}
+.qr-main {
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  align-items:center;
+  gap:72px;
+  width:min(100%,1200px);
+  min-height:calc(100svh - var(--header-height));
+  margin-inline:auto;
+  padding:56px 48px;
+}
+.qr-intro .eyebrow {margin:0 0 24px}
+.qr-intro h1 {
+  margin:0;
+  font-size:clamp(64px,7.6vw,100px);
+  font-weight:800;
+  line-height:.96;
+  letter-spacing:-.065em;
+}
+.qr-underline {position:relative;white-space:nowrap}
+.qr-underline svg {
+  position:absolute;
+  left:0;
+  bottom:-16px;
+  width:100%;
+  height:20px;
+  color:#e83262;
+}
+.qr-instruction {margin:36px 0 0;font-size:20px;line-height:1.5}
+.qr-figure {width:min(100%,420px);margin:0;justify-self:center}
+.qr-code {
+  overflow:hidden;
+  background:#fff;
+  border:1px solid #29232f30;
+  border-radius:18px;
+  box-shadow:8px 10px 0 #29232f18;
+}
+.qr-code img {width:100%;height:auto;aspect-ratio:1}
+.qr-figure figcaption {margin-top:24px;text-align:center}
+.qr-figure figcaption a {
+  display:inline-flex;
+  align-items:center;
+  min-height:44px;
+  font-size:36px;
+  font-weight:800;
+  letter-spacing:-.065em;
+  line-height:1;
+}
+.qr-arrow {margin-left:12px;font-size:23px;font-weight:400}
+
+@media (max-width:700px) {
+  .qr-main {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:28px;
+    padding:32px 24px;
+  }
+  .qr-intro {text-align:center}
+  .qr-intro .eyebrow {font-size:10px;margin-bottom:16px}
+  .qr-intro h1 {font-size:clamp(48px,13.5vw,64px)}
+  .qr-underline svg {bottom:-12px;height:15px}
+  .qr-instruction {margin-top:24px;font-size:16px}
+  .qr-figure {width:min(100%,340px,calc(100svh - 340px))}
+  .qr-figure figcaption {margin-top:14px}
+  .qr-figure figcaption a {font-size:30px}
+}
+
+@media (max-width:700px) and (max-height:700px) {
+  .qr-main {padding:16px;gap:20px}
+  .qr-intro .eyebrow {margin-bottom:10px}
+  .qr-intro h1 {font-size:34px}
+  .qr-intro h1 br {display:none}
+  .qr-underline svg {bottom:-9px;height:10px}
+  .qr-instruction {margin-top:16px;font-size:15px}
+  .qr-figure {width:min(100%,320px,calc(100svh - 280px))}
+  .qr-figure figcaption {margin-top:8px}
+}
+
+@media (min-aspect-ratio:4/3) and (max-height:600px) {
+  .qr-main {display:grid;grid-template-columns:1.1fr 1fr;gap:32px;padding:24px 40px}
+  .qr-intro {text-align:left}
+  .qr-intro .eyebrow {font-size:10px;margin-bottom:16px}
+  .qr-intro h1 {font-size:clamp(36px,6vw,72px)}
+  .qr-intro h1 br {display:block}
+  .qr-instruction {font-size:16px;margin-top:28px}
+  .qr-figure {width:min(100%,calc(100svh - 184px))}
+  .qr-figure figcaption {margin-top:8px}
+  .qr-figure figcaption a {font-size:28px}
+}
