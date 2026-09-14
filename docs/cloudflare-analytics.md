@@ -11,9 +11,9 @@ token from its JavaScript snippet. Use that same token in `analytics.js` and
 the inline loader in each project entry page below. It is a public site token,
 not an API credential. Do not place account credentials in HTML or JavaScript.
 
-The token is currently empty: the replacement is inactive and must not be
-deployed until a real token has been configured in all eight copies. The
-portfolio's Pages workflow enforces this with `ANALYTICS_REQUIRE_TOKEN=1`.
+The `arv.in` site was registered on September 14, 2026, with automatic injection
+disabled. Its real public token is configured in all eight copies. The
+portfolio's Pages workflow rejects an empty token with `ANALYTICS_REQUIRE_TOKEN=1`.
 
 The root `analytics.js` is the reference loader. Project pages embed identical
 copies between the `arv.in analytics` comment and the closing script tag. This
@@ -89,18 +89,19 @@ excluding these notes and tests.
 
 ## Implementation checks — September 14, 2026
 
-- Eighteen loader tests passed; the real-token check is pending. The deployment
-  mode correctly fails when the public token is empty.
+- All 29 analytics and video lifecycle tests passed in deployment mode, including
+  the real-token configuration check. The deployment mode also correctly rejects
+  an empty public token.
 - All seven inline copies match the reference loader. The ten assembled HTML
   paths returned HTTP 200, contained one loader each, and resolved their local
   assets; the privacy stylesheet, QR SVG, and PDF download also returned 200.
-- Scroll Video Scrubber's site build, lint, type checking, and nine tests passed.
+- Scroll Video Scrubber's site build, lint, type checking, and 26 tests passed.
 - Cloudflare beacon version `2026.9.1` was exercised in a simulated DOM using a
   test token and intercepted requests. The load and page-exit payloads targeted
   Cloudflare's external collector, contained no query strings or fragments, and
   retained referrer paths. No cookie or storage access occurred. These simulated
   checks do not establish real-browser rendering, complete Web Vitals behavior,
   collector acceptance, or dashboard delivery.
-- Registration, the real public token, live deployment, and dashboard checks
-  remain pending. The saved Wrangler OAuth login lacks Web Analytics API
-  permission, and no connected browser was available to use the dashboard.
+- Cloudflare registration and public-token configuration are complete. API access
+  uses an account-scoped credential stored outside the repositories. Live
+  collector and dashboard delivery require the post-deployment checks above.

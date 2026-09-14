@@ -3,8 +3,7 @@
     'use strict';
 
     // Public Web Analytics token for arv.in, not a Cloudflare API credential.
-    // Leave empty until the site has been registered in Cloudflare.
-    var siteToken = '';
+    var siteToken = '28107c6d56504cf19b47d3d155ab30dc';
     var productionHosts = ['arv.in', 'www.arv.in'];
     var navigator = window.navigator;
     var doNotTrack = navigator.doNotTrack === '1' ||
