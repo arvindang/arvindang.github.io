@@ -103,5 +103,37 @@ excluding these notes and tests.
   checks do not establish real-browser rendering, complete Web Vitals behavior,
   collector acceptance, or dashboard delivery.
 - Cloudflare registration and public-token configuration are complete. API access
-  uses an account-scoped credential stored outside the repositories. Live
-  collector and dashboard delivery require the post-deployment checks above.
+  uses an account-scoped credential stored outside the repositories. Cloudflare
+  GraphQL reporting returned homepage page-view records after deployment.
+
+## Production release — September 14, 2026
+
+The portfolio redesign and analytics were merged in
+[portfolio PR #11](https://github.com/arvindang/arvindang.github.io/pull/11)
+and deployed from the repository's production branch, `master`. All seven
+project releases below were merged into `main` and deployed successfully.
+
+| Project | Merged analytics PR |
+| --- | --- |
+| forked | [#5](https://github.com/arvindang/forked/pull/5) |
+| illustrative | [#4](https://github.com/arvindang/illustrative/pull/4) |
+| murmur | [#5](https://github.com/arvindang/murmur/pull/5) |
+| naiman | [#1](https://github.com/arvindang/naiman/pull/1) |
+| scroll-video-scrubber | [#3](https://github.com/arvindang/scroll-video-scrubber/pull/3) |
+| tikt | [#1](https://github.com/arvindang/tikt/pull/1) |
+| whiplash | [#1](https://github.com/arvindang/whiplash/pull/1) |
+
+Live HTTP checks confirmed the following:
+
+- The homepage, `/privacy/`, `/qr/`, and `analytics.js` match the release files.
+- All seven project URLs return 200 and contain exactly one copy of the shared
+  loader, the configured public token, and a website privacy link. Their HTML
+  contains no PostHog or GoatCounter snippets.
+- The portfolio film supports HTTP 206 byte-range requests.
+- Every project deployment and the scrubber CI run passed. The scrubber runtime
+  fixes were already released in
+  [PR #2](https://github.com/arvindang/scroll-video-scrubber/pull/2); the analytics
+  release preserves them. No npm package version was published.
+- Cloudflare's reporting API returned page-view records for `/`, confirming
+  ingestion and reporting from the live portfolio. Separate real-browser
+  network/storage inspection on every project path remains unverified.
