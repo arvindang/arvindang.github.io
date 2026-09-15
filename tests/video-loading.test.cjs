@@ -32,6 +32,7 @@ function setup({ readyState = 0 } = {}) {
   const project = new Element();
   const video = new Element();
   const button = new Element();
+  const mobileButton = new Element();
   const motion = new EventTarget();
   const viewport = new EventTarget();
   let nearViewport;
@@ -52,7 +53,7 @@ function setup({ readyState = 0 } = {}) {
   project.children.set('video', video);
   document.documentElement = new Element();
   document.hidden = false;
-  document.querySelectorAll = selector => selector === '.project:not([hidden])' ? [project] : [];
+  document.querySelectorAll = selector => selector === '.project:not([hidden])' ? [project] : selector === '[data-motion-toggle]' ? [button, mobileButton] : [];
   for (const selector of ['#film-dialog', '#dialog-video', '.work-menu', '#close-film', '.hero-collage']) {
     document.children.set(selector, new Element());
   }
@@ -89,7 +90,7 @@ function setup({ readyState = 0 } = {}) {
   };
   vm.runInNewContext(source, context, { filename: 'app.js' });
   return {
-    video, project, document, window, button, motion, scrubbers,
+    video, project, document, window, button, mobileButton, motion, scrubbers,
     near() { nearViewport([{ isIntersecting: true, target: project }]); },
     ready() { video.readyState = 4; video.dispatchEvent(new Event('loadeddata')); },
     seek() { video.seeking = true; video.dispatchEvent(new Event('seeking')); },
@@ -237,4 +238,26 @@ test('a media error keeps the fallback and does not trigger automatic reloads', 
   env.window.dispatchEvent(new Event('scroll'));
   env.advance(5000);
   assert.equal(env.video.loads, 1);
+});
+
+test('desktop and mobile motion controls share state and respect system preferences', () => {
+  const env = started();
+  env.mobileButton.dispatchEvent(new Event('click'));
+  for (const button of [env.button, env.mobileButton]) {
+    assert.equal(button.getAttribute('aria-pressed'), 'true');
+    assert.equal(button.textContent, 'More motion');
+  }
+  assert.equal(env.video.controls, true);
+  assert.equal(env.scrubbers[0].destroyed, true);
+  env.button.dispatchEvent(new Event('click'));
+  for (const button of [env.button, env.mobileButton]) {
+    assert.equal(button.getAttribute('aria-pressed'), 'false');
+    assert.equal(button.textContent, 'Less motion');
+  }
+  env.motion.matches = true;
+  env.motion.dispatchEvent(new Event('change'));
+  for (const button of [env.button, env.mobileButton]) {
+    assert.equal(button.disabled, true);
+    assert.equal(button.getAttribute('aria-pressed'), 'true');
+  }
 });

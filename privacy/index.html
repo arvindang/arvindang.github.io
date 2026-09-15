@@ -1,10 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html class="utility-page" lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="How arv.in uses privacy-conscious, cookieless analytics.">
-  <meta name="theme-color" content="#e9e4f3">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#e9e4f3" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#211d29" media="(prefers-color-scheme: dark)">
   <title>Privacy — Arvin Dang</title>
   <link rel="canonical" href="https://arv.in/privacy/">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
@@ -12,10 +14,15 @@
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../navigation.css">
   <link rel="stylesheet" href="./privacy.css">
+  <link rel="stylesheet" href="../theme.css">
+  <script defer src="../theme.js"></script>
   <script defer src="../analytics.js"></script>
 </head>
 <body>
-  <header class="site-header"><a class="wordmark" href="../index.html" aria-label="Arvin Dang home">arv<span class="name-dot">.</span>in</a><span class="header-aside">Designer. Builder. Curious person.</span><a class="qr-link" href="../qr/index.html" aria-label="Show my QR code" title="Show my QR code"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="6" height="6" rx=".5"/><rect x="15" y="3" width="6" height="6" rx=".5"/><rect x="3" y="15" width="6" height="6" rx=".5"/><path d="M15 15h3v3h3v3h-6v-3M21 15v-3M12 3v3M3 12h3M12 12h3M12 21v-3"/></svg></a><a class="hello-link" href="../index.html">Back home ↗</a></header>
+  <header class="site-header"><a class="wordmark" href="../index.html" aria-label="Arvin Dang home">arv<span class="name-dot">.</span>in</a><span class="header-aside">Designer. Builder. Curious person.</span><button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" hidden>
+  <svg class="theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.9 13.1A9 9 0 0 1 10.9 3.1 9 9 0 1 0 20.9 13.1Z"/></svg>
+  <svg class="theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+</button><a class="qr-link" href="../qr/index.html" aria-label="Show my QR code" title="Show my QR code"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="6" height="6" rx=".5"/><rect x="15" y="3" width="6" height="6" rx=".5"/><rect x="3" y="15" width="6" height="6" rx=".5"/><path d="M15 15h3v3h3v3h-6v-3M21 15v-3M12 3v3M3 12h3M12 12h3M12 21v-3"/></svg></a><a class="hello-link" href="../index.html">Back home ↗</a></header>
 <main class="privacy section">
   <div class="container">
     <article class="privacy__content">
@@ -44,6 +51,11 @@
 
       <p>
         The site also works with JavaScript or analytics requests blocked. Local previews are never measured.
+      </p>
+
+      <h2>Appearance preference</h2>
+      <p>
+        If you choose light or dark mode, the site saves that choice in your browser’s local storage. It is used only to remember your appearance preference and is not sent to analytics. Until you choose, the site follows your operating system’s appearance.
       </p>
 
       <h2>Other services</h2>

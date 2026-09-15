@@ -23,11 +23,17 @@ node server.mjs --no-js
 The server is only a preview convenience. It is not deployed or required to open
 the site. System reduced-motion preferences and short viewports intentionally
 select the reading layout; larger screens also have a Less motion button.
+On mobile, Menu groups the project list, contact links, and motion control.
+The appearance toggle and QR shortcut remain visible in the single-row header.
 
 ## Files
 
 - `index.html` — portfolio content and native video/link fallbacks.
 - `app.js` — scroll-driven presentation, motion controls, and film dialog.
+- `theme.css`, `theme.js` — shared light/dark palettes and the header appearance
+  toggle. The site follows the OS until a visitor chooses a mode; the sun offers
+  light mode, and the moon offers dark mode. An explicit choice is remembered
+  in local storage when available. CSS follows the OS even without JavaScript.
 - `vendor/scroll-video-scrubber.js` — the original scrubber implementation in a
   classic-script wrapper. See [vendor notes](vendor/README.md).
 - `styles.css`, `navigation.css`, `fallbacks.css`, `fonts.css` — presentation.
@@ -56,6 +62,18 @@ also makes the plain-file intent explicit.
 
 Project sites such as `/murmur/`, `/illustrative/`, and `/scroll-video-scrubber/`
 are linked as live URLs; their source is not part of this repository.
+
+## Share preview
+
+`media/arv-in-share.png` is the selected 1200×630 share image: the Bricolage
+Grotesque arv.in wordmark, with its red dot, on the site's lavender background.
+The root HTML includes Open Graph and Twitter card metadata with the absolute
+production image URL, dimensions, and alternative text. The existing Pages
+workflow includes the image when it copies `media/`; no image generation or
+JavaScript is required to serve the preview.
+
+See [the appearance implementation notes](docs/roadmap.md) for the dark-mode
+plan, behavior, and validation.
 
 ## Why direct opening previously showed the fallback
 

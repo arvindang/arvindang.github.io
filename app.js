@@ -39,7 +39,7 @@ const { createVideoScrubber } = window.ScrollVideoScrubber;
 const projects = [...document.querySelectorAll('.project:not([hidden])')];
 const mediaQuery = matchMedia('(prefers-reduced-motion: reduce)');
 const shortViewport = matchMedia('(max-height: 600px), (max-width: 700px) and (max-height: 700px)');
-const motionButton = document.querySelector('#motion-toggle');
+const motionButtons = [...document.querySelectorAll('[data-motion-toggle]')];
 const dialog = document.querySelector('#film-dialog');
 const dialogVideo = document.querySelector('#dialog-video');
 const controllers = new Map();
@@ -183,10 +183,12 @@ function applyMotionMode() {
   document.documentElement.classList.toggle('enhanced',!isReduced);
   document.documentElement.classList.toggle('no-motion',isReduced);
   const forcedReading=mediaQuery.matches||shortViewport.matches;
-  motionButton.textContent=isReduced&&!forcedReading?'More motion':'Less motion';
-  motionButton.setAttribute('aria-pressed',String(isReduced));
-  motionButton.disabled=forcedReading;
-  motionButton.title=mediaQuery.matches?'Reduced motion follows your system preference':shortViewport.matches?'A shorter screen uses the reading layout':'';
+  for (const button of motionButtons) {
+    button.textContent=isReduced&&!forcedReading?'More motion':'Less motion';
+    button.setAttribute('aria-pressed',String(isReduced));
+    button.disabled=forcedReading;
+    button.title=mediaQuery.matches?'Reduced motion follows your system preference':shortViewport.matches?'A shorter screen uses the reading layout':'';
+  }
   for(const project of projects) {
     const video=project.querySelector('video'); video.controls=isReduced;
     project.querySelectorAll('.copy-slide').forEach(slide=>{
@@ -203,7 +205,7 @@ function refreshMotionLayout() {
   applyMotionMode();
   if(current) window.scrollTo({top:scrollY+current.getBoundingClientRect().top-parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-height')),behavior:'instant'});
 }
-motionButton.addEventListener('click',()=>{
+for (const button of motionButtons) button.addEventListener('click',()=>{
   userWantsLessMotion=!userWantsLessMotion;
   refreshMotionLayout();
 });

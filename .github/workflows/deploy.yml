@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
-      - name: Verify analytics and video lifecycle
+      - name: Verify analytics, appearance, and video lifecycle
         env:
           ANALYTICS_REQUIRE_TOKEN: '1'
         run: node --test tests/*.test.cjs

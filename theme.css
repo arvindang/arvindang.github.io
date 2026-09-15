@@ -1,0 +1,169 @@
+/* Shared appearance for the portfolio, privacy notice, and QR page.
+   The media query works without scripts. Explicit choices take precedence. */
+:root {
+  color-scheme:light;
+  --ink:#29232f;
+  --paper:#e9e4f3;
+  --header-bg:rgba(250,248,252,.93);
+  --menu-bg:#fff9e9;
+  --about-bg:#f5f1e8;
+  --about-accent:#b13853;
+  --frame-bg:#fffdf6;
+  --frame-ink:#625f65;
+  --video-bg:#f6f5ef;
+  --line:#29232f25;
+  --edge:#29232f40;
+  --menu-shadow:#29232f;
+  --button-bg:#29232f;
+  --button-ink:#fff9ec;
+  --evaluation-bg:#f3cd44;
+  --math-bg:#d8cee8;
+  --enduvo-bg:#f4e6a5;
+  --enduvo-ink:#332c18;
+  --embed3d-bg:#bed8f0;
+  --embed3d-ink:#1f334b;
+  --cerca-bg:#c8dfbc;
+  --cerca-ink:#263b23;
+  --illustrative-bg:#f4cbb5;
+  --illustrative-ink:#492c28;
+  --murmur-bg:#d7cdf3;
+  --murmur-ink:#35294c;
+  --tufte-bg:#ebeadf;
+  --tufte-ink:#31342b;
+  --scrubber-bg:#f3cd44;
+  --scrubber-ink:#342919;
+}
+@media (prefers-color-scheme:dark) {
+  :root:not([data-theme]) {
+    color-scheme:dark;
+    --ink:#eee7f4;
+    --paper:#211d29;
+    --header-bg:rgba(33,29,41,.95);
+    --menu-bg:#302a39;
+    --about-bg:#28242d;
+    --about-accent:#ef9fb5;
+    --frame-bg:#302b36;
+    --frame-ink:#d0c8d6;
+    --video-bg:#17141c;
+    --line:#eee7f433;
+    --edge:#eee7f44d;
+    --menu-shadow:#100d16;
+    --button-bg:#eee7f4;
+    --button-ink:#29232f;
+    --evaluation-bg:#42371e;
+    --math-bg:#382f49;
+    --enduvo-bg:#332f20;
+    --enduvo-ink:#f4e6a5;
+    --embed3d-bg:#1d2d40;
+    --embed3d-ink:#c9e1f7;
+    --cerca-bg:#233629;
+    --cerca-ink:#cee4c5;
+    --illustrative-bg:#3c2924;
+    --illustrative-ink:#f4d2bd;
+    --murmur-bg:#2e263f;
+    --murmur-ink:#ded2fb;
+    --tufte-bg:#2b3028;
+    --tufte-ink:#e5e8d8;
+    --scrubber-bg:#352e1b;
+    --scrubber-ink:#f4d773;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme:dark;
+  --ink:#eee7f4;
+  --paper:#211d29;
+  --header-bg:rgba(33,29,41,.95);
+  --menu-bg:#302a39;
+  --about-bg:#28242d;
+  --about-accent:#ef9fb5;
+  --frame-bg:#302b36;
+  --frame-ink:#d0c8d6;
+  --video-bg:#17141c;
+  --line:#eee7f433;
+  --edge:#eee7f44d;
+  --menu-shadow:#100d16;
+  --button-bg:#eee7f4;
+  --button-ink:#29232f;
+  --evaluation-bg:#42371e;
+  --math-bg:#382f49;
+  --enduvo-bg:#332f20;
+  --enduvo-ink:#f4e6a5;
+  --embed3d-bg:#1d2d40;
+  --embed3d-ink:#c9e1f7;
+  --cerca-bg:#233629;
+  --cerca-ink:#cee4c5;
+  --illustrative-bg:#3c2924;
+  --illustrative-ink:#f4d2bd;
+  --murmur-bg:#2e263f;
+  --murmur-ink:#ded2fb;
+  --tufte-bg:#2b3028;
+  --tufte-ink:#e5e8d8;
+  --scrubber-bg:#352e1b;
+  --scrubber-ink:#f4d773;
+}
+
+.site-header {background:var(--header-bg);border-bottom-color:var(--line)}
+.project-menu,.outreach-menu {
+  background:var(--menu-bg);
+  border-color:var(--edge);
+  box-shadow:7px 9px 0 var(--menu-shadow),0 24px 60px #0003;
+}
+.project-menu a:hover,.project-menu a:focus-visible,
+.outreach-menu a:hover,.outreach-menu a:focus-visible,
+.site-header .qr-link:hover,.site-header .theme-toggle:hover {
+  background:#f3cd44;
+  color:#29232f;
+}
+.hero-footer,.project-header {border-color:var(--line)}
+.hero-cta {background:var(--button-bg);color:var(--button-ink)}
+.sticker {color:#29232f}
+.collage-card,.film-card {background:var(--frame-bg);border-color:var(--edge)}
+.collage-comic {border-color:var(--frame-bg)}
+.film-chrome {background:var(--frame-bg);color:var(--frame-ink);border-color:var(--line)}
+.film-card video {background:var(--video-bg)}
+.film-progress {background:var(--line)}
+:root:not(.enhanced) .copy-slide+.copy-slide {border-color:var(--line)}
+.about {background:var(--about-bg)}
+.about h2 span {color:var(--about-accent)}
+.tool-card {border-color:var(--edge)}
+.evaluation {background:var(--evaluation-bg)}
+.math {background:var(--math-bg)}
+.tool-preview {color:inherit}
+.skip-link,.media-error::after {background:var(--menu-bg);color:var(--ink)}
+dialog {background:var(--about-bg);color:var(--ink)}
+.dialog-header button {background:var(--button-bg);color:var(--button-ink)}
+.qr-code {color-scheme:light;background:#fff;border-color:var(--edge)}
+
+/* Each icon names the destination, rather than the current appearance. */
+.site-header .theme-toggle {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  padding:0;
+  flex-shrink:0;
+  border-radius:50%;
+  background:transparent;
+}
+.site-header .theme-toggle[hidden] {display:none}
+.site-header .theme-toggle:focus-visible {outline-color:var(--ink);outline-offset:3px}
+.theme-toggle svg {width:22px;height:22px;pointer-events:none}
+.theme-toggle .theme-sun {display:none}
+:root[data-theme="dark"] .theme-toggle .theme-moon {display:none}
+:root[data-theme="dark"] .theme-toggle .theme-sun {display:block}
+
+/* Utility pages share the control and retain their compact return navigation. */
+.utility-page .site-header {display:flex;gap:16px}
+.utility-page .theme-toggle {margin-left:auto}
+.utility-page .qr-back {margin-left:0}
+@media (max-width:700px) {
+  .utility-page .site-header {padding-inline:16px}
+  .utility-page .site-header .wordmark {font-size:32px}
+  .utility-page .site-header .hello-link {display:inline-flex;white-space:nowrap}
+  .utility-page .site-header .qr-back {font-size:12px}
+}
+@media (max-width:360px) {
+  .utility-page {--header-height:62px}
+  .utility-page .site-header {gap:8px;padding-block:0}
+}

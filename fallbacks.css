@@ -1,5 +1,7 @@
 /* Native media, links and the reading layout work before JavaScript loads. */
-:root:not(.js-ready) #motion-toggle {display:none}
+:root:not(.js-ready) #motion-toggle,
+:root:not(.js-ready) #mobile-motion-toggle,
+:root:not(.js-ready) .compact-preferences {display:none}
 :root:not(.enhanced) {scroll-behavior:auto}
 :root:not(.enhanced) .hero-cta,
 :root:not(.enhanced) .contact-title svg {transition:none}
