@@ -6,76 +6,225 @@
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#f4f4ef" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0d1c21" media="(prefers-color-scheme: dark)">
-  <meta name="description" content="Gammon is a backgammon board that teaches. Play full matches, sharpen your instincts with One Roll, and understand your moves with an offline coach. Coming soon to iPhone, iPad, iPhone Duo, and Mac.">
+  <meta name="description" content="Gammon is a backgammon game with a patient coach inside. Play full matches, sharpen your instincts with One Roll, and replay your decisions with on-device analysis. Coming soon to iPhone, iPad and Mac.">
   <title>Gammon — a backgammon board that teaches</title>
   <link rel="canonical" href="https://arv.in/gammon/">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://arv.in/gammon/">
   <meta property="og:title" content="Gammon — a backgammon board that teaches">
-  <meta property="og:description" content="Play the whole game. Learn one roll at a time. Coming soon for iPhone, iPad, iPhone Duo, and Mac.">
-  <meta property="og:image" content="https://arv.in/gammon/assets/coach-ipad.webp">
-  <meta property="og:image:alt" content="Gammon One Roll coach beside a backgammon board on iPad.">
-  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <meta property="og:description" content="Play the whole game. Learn one roll at a time. Coming soon for iPhone, iPad and Mac.">
+  <meta property="og:image" content="https://arv.in/gammon/assets/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Gammon's backgammon board on iPhone and iPad.">
+  <link rel="icon" href="./assets/app-icon.webp" type="image/webp">
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+  <link rel="preload" href="./assets/hero-phone.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="../fonts.css">
   <link rel="stylesheet" href="./site.css">
   <script defer src="../theme.js"></script>
   <script defer src="../analytics.js"></script>
 </head>
-<body>
+<body class="home">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <a class="brand" href="./" aria-label="Gammon home"><span class="brand-checker" aria-hidden="true"><i></i></span><span>Gammon</span></a>
-    <nav class="header-links" aria-label="Main navigation">
-      <a href="#learn">Discover</a>
-      <a href="#devices">Devices</a>
-      <a href="./support/">Support</a>
-    </nav>
+    <a class="brand" href="./" aria-label="Gammon home"><img class="brand-icon" src="./assets/app-icon.webp" alt="" width="40" height="40"><span>Gammon</span></a>
     <div class="header-end">
+      <span class="header-status"><span class="status-dot" aria-hidden="true"></span> Coming soon</span>
       <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode" hidden>
         <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.9 13.1A9 9 0 0 1 10.9 3.1 9 9 0 1 0 20.9 13.1Z"/></svg>
         <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
       </button>
-      <span class="header-status"><span class="status-dot" aria-hidden="true"></span> Coming soon</span>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="beat hero" data-beat="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="eyebrow-line"></span> PLAY &amp; LEARN BACKGAMMON</p>
-        <h1 id="hero-title">Every move<br>has a <em>story.</em></h1>
-        <p class="hero-lead">A complete backgammon game with a patient coach inside. Play a match, follow your curiosity, and see why another move might be stronger.</p>
-        <div class="hero-actions"><a class="primary-button" href="mailto:apple@arvindang.com?subject=Gammon%20launch">Ask about launch <span aria-hidden="true">↗</span></a><a class="text-link" href="#learn">See how it plays <span aria-hidden="true">↓</span></a></div>
-        <div class="hero-facts" aria-label="App highlights"><span><b>30</b> One Roll positions</span><span><b>11</b> interactive lessons</span><span><b>0</b> accounts required</span></div>
+        <p class="eyebrow">Backgammon for iPhone, iPad and Mac</p>
+        <h1 id="hero-title">Every move has a&nbsp;<em>story.</em></h1>
+        <p class="lead">A complete backgammon game with a patient coach inside. Play a match, then see what another move would have done.</p>
+        <ul class="platforms" aria-label="Platforms">
+          <li><a class="platform" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6"/><path d="M10.5 5h3"/></svg><span><small>Coming soon</small>iOS</span></a></li>
+          <li><a class="platform" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="2.5" width="17" height="19" rx="2.4"/><path d="M11 18.5h2"/></svg><span><small>Coming soon</small>iPadOS</span></a></li>
+          <li><a class="platform" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="4.5" width="15" height="11" rx="1.6"/><path d="M2 19h20"/></svg><span><small>Coming soon</small>macOS</span></a></li>
+        </ul>
       </div>
-      <div class="hero-art" aria-label="Gammon match on iPhone">
-        <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
-        <span class="hero-spark spark-one" aria-hidden="true">✳</span><span class="hero-spark spark-two" aria-hidden="true">✳</span>
-        <img src="./assets/match-phone.webp" alt="Gammon on iPhone showing a live backgammon match and a suggested destination for a checker." width="862" height="1862" fetchpriority="high">
-        <div class="hero-stamp"><span>ONE MORE<br>ROLL?</span><i aria-hidden="true">↗</i></div>
-      </div>
-      <div class="hero-bottom"><span>THE WHOLE GAME. THE NEXT IDEA.</span><span>SCROLL TO EXPLORE ↓</span></div>
-    </section>
-
-    <div class="ticker" aria-hidden="true"><div>ROLL · THINK · MOVE · LEARN <span>✳</span> ROLL · THINK · MOVE · LEARN <span>✳</span> ROLL · THINK · MOVE · LEARN <span>✳</span></div></div>
-
-    <section class="intro section-shell" id="learn" aria-labelledby="intro-title">
-      <p class="eyebrow">01 / START ANYWHERE</p>
-      <div class="intro-grid"><h2 id="intro-title">New to the board?<br><em>Right at home.</em></h2><p>Learn the rules by moving real checkers. Then try a single decision, or settle in for a full match. Gammon meets you wherever you are in the game.</p></div>
-      <div class="feature-grid">
-        <article class="feature-card feature-card-blue"><div class="feature-meta"><span>01 / PRACTICE</span><span>30 POSITIONS</span></div><img src="./assets/one-roll-iphone.webp" alt="One Roll practice on iPhone: make one backgammon decision, then compare with the stronger play." width="1320" height="2868" loading="lazy"><p>Small moments. Better instincts.</p></article>
-        <article class="feature-card feature-card-dark"><div class="feature-meta"><span>02 / PLAY</span><span>1 · 3 · 5 POINTS</span></div><img src="./assets/replay-iphone.webp" alt="Match replay on iPhone compares a played move with the coach's alternative and numbered arrows." width="1320" height="2868" loading="lazy"><p>Your game, with a second look.</p></article>
+      <div class="hero-visual" data-anchor="hero-rest" data-anchor-x="0.16" data-anchor-y="0.84" data-anchor-size="0.11">
+        <img class="hero-phone" src="./assets/hero-phone.webp" alt="Gammon on iPhone: a match against the computer, with a checker lifted from the six point and its destination outlined." width="760" height="1554" fetchpriority="high">
+        <span class="checker checker--rest" aria-hidden="true"></span>
       </div>
     </section>
 
-    <section class="statement" aria-labelledby="statement-title"><div class="statement-top"><span>GOOD QUESTIONS MAKE BETTER PLAYERS</span><span aria-hidden="true">✳</span></div><h2 id="statement-title">“What if I’d<br>played <em>that?</em>”</h2><p>Ask the coach for a hint when you want one. After the match, replay the decisions that mattered and compare real alternatives on the board. The analysis runs on your device.</p><div class="statement-bottom"><span>NO ACCOUNT. NO ADS. YOUR PACE.</span><span>GAMMON / 2026</span></div></section>
-
-    <section class="devices section-shell" id="devices" aria-labelledby="devices-title"><div class="section-heading"><div><p class="eyebrow">02 / TAKE YOUR SEAT</p><h2 id="devices-title">Room to play.<br><em>Wherever you are.</em></h2></div><p>Built for the screen in your hands—or the one on your desk. The board, moves, and coach find their place together.</p></div>
-      <div class="device-grid"><figure class="device-card device-duo"><img src="./assets/duo-iphone.webp" alt="Gammon on iPhone Duo, with the board and coach side by side when open and stacked when folded." width="1320" height="2868" loading="lazy"><figcaption><span>IPHONE DUO</span><span>Coach beside you ↗</span></figcaption></figure><figure class="device-card device-ipad"><img src="./assets/coach-ipad.webp" alt="Gammon coach and backgammon board on iPad." width="2752" height="2064" loading="lazy"><figcaption><span>IPAD</span><span>More room for the move ↗</span></figcaption></figure><figure class="device-card device-mac"><img src="./assets/coach-mac.webp" alt="Gammon's board and coach in a Mac window." width="2880" height="1800" loading="lazy"><figcaption><span>MAC</span><span>The table on your desk ↗</span></figcaption></figure></div>
+    <section class="beat beat--play" data-beat="play" aria-labelledby="play-title">
+      <div class="beat-copy">
+        <p class="eyebrow"><span class="step">01</span> Play</p>
+        <h2 id="play-title">Play the whole game.</h2>
+        <p>Take on the computer, or pass one device across the table. Every match counts to 1, 3 or 5 points, with the doubling cube in play.</p>
+        <dl class="specs">
+          <div><dt>Computer</dt><dd>Friendly or Stronger</dd></div>
+          <div><dt>Pass and play</dt><dd>Two players, one board</dd></div>
+          <div><dt>Match length</dt><dd>1, 3 or 5 points</dd></div>
+        </dl>
+      </div>
+      <figure class="shot shot--landscape">
+        <img src="./assets/play-landscape.webp" alt="A match on iPhone in landscape. White's checker is lifted from the six point, with the five point outlined as its destination." width="1600" height="736" loading="lazy" data-anchor="play-land" data-anchor-x="0.5908" data-anchor-y="0.7280" data-anchor-size="0.027">
+      </figure>
     </section>
 
-    <section class="closing" aria-labelledby="closing-title"><span class="closing-checker" aria-hidden="true">●</span><p class="eyebrow">COMING SOON</p><h2 id="closing-title">Your next move<br>starts <em>here.</em></h2><p>Gammon is on its way to iPhone, iPad, iPhone Duo, and Mac.</p><a href="mailto:apple@arvindang.com?subject=Gammon%20updates" class="closing-link">Say hello <span aria-hidden="true">↗</span></a></section>
+    <section class="beat beat--coach" data-beat="coach" aria-labelledby="coach-title">
+      <div class="beat-copy">
+        <p class="eyebrow"><span class="step">02</span> Coach</p>
+        <h2 id="coach-title">“What if I’d played&nbsp;that?”</h2>
+        <p>Replay a match and step through the decisions that mattered. The coach sets your move beside real alternatives on the board, and explains what each one gives up.</p>
+        <p class="fine">3-ply analysis that runs on your device.</p>
+      </div>
+      <div class="shot-stack">
+        <div class="stack-frame" data-anchor="coach-dice" data-anchor-x="0.7088" data-anchor-y="0.4064" data-anchor-size="0.0433">
+          <figure class="stack-state is-yours">
+            <img src="./assets/coach-yours.webp" alt="Your move, 10/9 9/8 8/7 7/6, drawn with numbered arrows. The coach marks it weaker, with an equity loss of 0.048." width="1200" height="1159" loading="lazy" data-anchor="coach-from" data-anchor-x="0.5336" data-anchor-y="0.5907" data-anchor-size="0.043">
+            <figcaption><b>Your move</b> 10/9 9/8 8/7 7/6</figcaption>
+          </figure>
+          <figure class="stack-state is-best">
+            <img src="./assets/coach-best.webp" alt="The stronger move, 3/2 6/5 6/5 10/9, which makes the five point. Equity loss 0.000." width="1200" height="1159" loading="lazy" data-anchor="coach-to" data-anchor-x="0.6041" data-anchor-y="0.6347" data-anchor-size="0.043">
+            <figcaption><b>Stronger</b> 3/2 6/5(2) 10/9</figcaption>
+          </figure>
+        </div>
+        <div class="stack-legend" aria-hidden="true">
+          <span class="legend-yours"><b>Your move</b> 10/9 9/8 8/7 7/6</span>
+          <span class="legend-track"><i></i></span>
+          <span class="legend-best"><b>Stronger</b> makes the 5-point</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features" aria-labelledby="features-title">
+      <div class="features-head">
+        <p class="eyebrow"><span class="step">03</span> Inside</p>
+        <h2 id="features-title">Everything on one board.</h2>
+        <p>No account to make and no ads to skip. Just the game, and a better sense of it.</p>
+      </div>
+      <div class="bento">
+        <article class="tile tile--coach">
+          <div class="tile-copy">
+            <h3>Coach</h3>
+            <p>Numbered arrows play each move back on the board. Pick an alternative to see where it leads.</p>
+          </div>
+          <div class="tile-media tile-video">
+            <video muted playsinline loop preload="none" poster="./assets/coach-loop-poster.webp" width="640" height="970" aria-label="Match replay on iPhone: the coach draws a stronger move with numbered arrows and explains it.">
+              <source src="./assets/coach-loop.mp4" type="video/mp4">
+            </video>
+          </div>
+        </article>
+        <article class="tile tile--oneroll">
+          <div class="tile-copy">
+            <h3>One Roll</h3>
+            <p><b>30 positions.</b> <span class="more">Make one decision, then compare it with the stronger play.</span></p>
+          </div>
+          <div class="tile-media"><img src="./assets/tile-one-roll.webp" alt="A One Roll position: Black's home board, with the roll still to play." width="560" height="641" loading="lazy"></div>
+        </article>
+        <article class="tile tile--learn">
+          <div class="tile-copy">
+            <h3>Learn to play</h3>
+            <p><b>11 short lessons.</b> <span class="more">Learn the rules by moving real checkers.</span></p>
+          </div>
+          <div class="tile-media"><img src="./assets/tile-learn.webp" alt="A Learn to play step: a 3 and a 2 to play, with the moves numbered on the board." width="560" height="556" loading="lazy"></div>
+        </article>
+        <article class="tile tile--replay">
+          <div class="tile-copy">
+            <h3>Match replay</h3>
+            <p><b>Every match is saved.</b> <span class="more">Step through it turn by turn, from the opening roll to the last checker off.</span></p>
+          </div>
+          <div class="tile-media"><img src="./assets/tile-replay.webp" alt="Match replay with the coach's 13/7 8/7 for Alice drawn as numbered arrows." width="560" height="546" loading="lazy"></div>
+        </article>
+        <article class="tile tile--cube">
+          <div class="tile-copy">
+            <h3>Doubling cube</h3>
+            <p><b>Offer, take or pass.</b> <span class="more">The cube is part of every match.</span></p>
+          </div>
+          <div class="tile-media"><img src="./assets/tile-cube.webp" alt="Blair, offer a double? Keep playing, or offer double to 4." width="640" height="323" loading="lazy"></div>
+        </article>
+        <article class="tile tile--way">
+          <div class="tile-copy">
+            <h3>Play your way</h3>
+            <p><b>Your opponent, your length.</b></p>
+          </div>
+          <ul class="chips" aria-label="Match options">
+            <li class="chip chip--on">Friendly</li>
+            <li class="chip">Stronger</li>
+            <li class="chip chip--wide">Pass and play</li>
+            <li class="chip">1 pt</li>
+            <li class="chip chip--on">3 pts</li>
+            <li class="chip">5 pts</li>
+          </ul>
+        </article>
+        <article class="tile tile--offline tile--type">
+          <svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.2 3.6c0-.9.8-1.6 1.8-1.6s1.8.7 1.8 1.6v5.2l7.2 4.4v2l-7.2-2.2v4.6l2.2 1.6v1.8l-4-1.1-4 1.1v-1.8l2.2-1.6V13l-7.2 2.2v-2l7.2-4.4Z"/></svg>
+          <div><h3>Works offline</h3>
+          <p>The engine, lessons and coach all run on your device. Airplane mode is fine.</p></div>
+        </article>
+        <article class="tile tile--sync tile--type">
+          <svg class="tile-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10.2a4.3 4.3 0 0 0 .7-8.6 6 6 0 0 0-11.5 1.6A3.5 3.5 0 0 0 7 18.5Z"/></svg>
+          <div><h3>iCloud sync</h3>
+          <p>Matches and progress follow you through your private iCloud. No Gammon account.</p></div>
+        </article>
+        <article class="tile tile--everywhere">
+          <div class="tile-copy">
+            <h3>At home on every screen</h3>
+            <p>The board, moves and coach find their place on iPhone, iPhone Duo, iPad and Mac.</p>
+          </div>
+          <ul class="devices" aria-label="Devices">
+            <li class="device device--iphone"><img src="./assets/device-iphone.webp" alt="Gammon on iPhone." width="360" height="736" loading="lazy"><span>iPhone</span></li>
+            <li class="device device--duo"><span class="duo-frame tile-video"><video muted playsinline loop preload="none" poster="./assets/duo-fold.webp" width="880" height="620" aria-label="Gammon on iPhone Duo: folded, the coach stacks under the board; unfolded, they sit side by side."><source src="./assets/duo-fold.mp4" type="video/mp4"></video></span><span>iPhone Duo</span></li>
+            <li class="device device--ipad"><img src="./assets/device-ipad.webp" alt="Gammon on iPad in landscape, with the coach beside the board." width="900" height="693" loading="lazy"><span>iPad</span></li>
+            <li class="device device--mac"><img src="./assets/device-mac.webp" alt="Gammon on a Mac laptop." width="1100" height="715" loading="lazy"><span>Mac</span></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="beat close" data-beat="close" aria-labelledby="close-title">
+      <div class="dice-stage" data-anchor="close-dice" data-anchor-x="0.5" data-anchor-y="0.6" aria-hidden="true">
+        <span class="die die--five"><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="die die--three"><i></i><i></i><i></i></span>
+      </div>
+      <p class="eyebrow">Coming soon</p>
+      <h2 id="close-title">Your next move starts&nbsp;<em>here.</em></h2>
+      <p class="lead">Gammon is on its way to iPhone, iPad and Mac.</p>
+      <ul class="platforms" aria-label="Platforms">
+        <li><a class="platform" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.6"/><path d="M10.5 5h3"/></svg><span><small>Coming soon</small>iOS</span></a></li>
+        <li><a class="platform" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="2.5" width="17" height="19" rx="2.4"/><path d="M11 18.5h2"/></svg><span><small>Coming soon</small>iPadOS</span></a></li>
+        <li><a class="platform" aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="4.5" width="15" height="11" rx="1.6"/><path d="M2 19h20"/></svg><span><small>Coming soon</small>macOS</span></a></li>
+      </ul>
+    </section>
   </main>
-  <footer class="site-footer"><a class="footer-brand" href="./">Gammon<span>✳</span></a><span>Made by Arvin Dang.</span><nav aria-label="Footer"><a href="./privacy/">Privacy</a><a href="./support/">Support</a><a href="../">arv.in ↗</a></nav></footer>
+  <footer class="site-footer"><a class="footer-brand" href="./"><img class="footer-icon" src="./assets/app-icon.webp" alt="" width="30" height="30">Gammon</a><span>Made by Arvin Dang.</span><nav aria-label="Footer"><a href="./privacy/">Privacy</a><a href="./support/">Support</a><a href="../">arv.in ↗</a></nav></footer>
+  <script>
+    // Tile videos play only while visible, and never under reduced motion.
+    (function () {
+      var videos = document.querySelectorAll('.tile-video video');
+      var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (!videos.length || !('IntersectionObserver' in window)) return;
+      var visible = new Set();
+      function sync(video) {
+        if (!motion.matches && visible.has(video)) {
+          video.preload = 'auto';
+          var playing = video.play();
+          if (playing && playing.catch) playing.catch(function () {});
+        } else if (!video.paused) {
+          video.pause();
+        }
+      }
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) visible.add(entry.target); else visible.delete(entry.target);
+          sync(entry.target);
+        });
+      }, { threshold: 0.25 });
+      videos.forEach(function (video) { observer.observe(video); });
+      motion.addEventListener('change', function () { videos.forEach(sync); });
+    })();
+  </script>
+  <script defer src="./table.js"></script>
 </body>
 </html>
