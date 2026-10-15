@@ -83,3 +83,15 @@
 @media (min-width:701px) and (min-height:900px) and (max-aspect-ratio:4/3) {
   .enhanced .copy-slides {min-height:190px}
 }
+
+/* A project with two destinations: its site and an official plugin. */
+.visit-links {flex-basis:100%;display:flex;flex-wrap:wrap;gap:4px 20px;padding-top:16px}
+.visit-links .visit-link {flex-basis:auto;padding:0;margin:0}
+@media (min-width:701px) and (min-height:900px) and (max-aspect-ratio:4/3) {
+  .enhanced .visit-links {flex-basis:auto;flex-direction:column;padding:0;margin-left:20px}
+}
+@media (max-width:700px) {
+  .visit-links {flex-basis:auto;flex-direction:column;align-items:flex-end;gap:0;padding:0 0 0 6px;margin-left:auto}
+  .visit-links .visit-link {min-height:36px}
+  :root:not(.enhanced) .visit-links {margin-left:0;padding-left:0;align-items:flex-start}
+}

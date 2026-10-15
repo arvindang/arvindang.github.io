@@ -11,7 +11,7 @@ The site keeps one seekable film per project. The existing plugin maps the entir
 | Tufte | 18.1s | Chart playground / alternate views of the same rows / published evidence example |
 | Scroll Video Scrubber | 18.1s | Forward scrub / forward and backward scrub / continue to 100% |
 
-Illustrative is unchanged. Dasha remains hidden.
+Illustrative is unchanged. Dasha.fm returned on October 15, 2026 with a new capture (below).
 
 ## Supplied recordings
 
@@ -32,6 +32,10 @@ The September 14 sources store 1920×1080 pixels with a pixel aspect ratio of 76
 - **Scrubber:** records the actual live demo. Its internal progress runs 0→38→75→40→100, so the middle scene demonstrates reversal and the last scene still contains motion. The source flower film retains its existing MDN CC0 attribution.
 
 These outputs are 1280×720, silent H.264/yuv420p, 30 fps, CRF 20, faststart, with keyframes every eight frames. They use ten captured browser frames per output second; intervening encoded frames repeat those captures. Their output frame rate should not be confused with a native 30 fps screen recording.
+
+## Dasha.fm capture — October 15, 2026
+
+Recorded the public, signed-out https://dasha.fm/ in headless Chrome (dark scheme, 1280×720 at 2× then downscaled). 18s; scenes across 01 / 02 / 03: hero and assistant choice / "Your AI can read a chart. It can't cast one." and tropical vs. sidereal / what your AI gets, natal chart, dasha and transits, then "Then try asking." Same encoding as the other browser captures: ten captured frames per second, 30 fps H.264/yuv420p, CRF 20, keyframes every eight frames, faststart, no audio. Poster at output 2; detail at 12.6. The previous retirement-notice capture was replaced.
 
 ## Prior validation — September 11
 

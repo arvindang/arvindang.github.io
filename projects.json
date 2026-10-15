@@ -151,28 +151,29 @@
   },
   {
     "id": "dasha",
-    "name": "Dasha-FM",
-    "kind": "An earlier exploration",
+    "name": "Dasha.fm",
+    "kind": "Official ChatGPT plugin",
     "url": "https://dasha.fm/",
+    "plugin": "https://chatgpt.com/plugins/plugin_asdk_app_6abe7d92416c8191b403cadc58ef107d",
     "color": "#ecd2cd",
     "ink": "#4a2b36",
     "angle": -4,
-    "source": "Current public retirement notice",
+    "source": "Website walkthrough",
     "beats": [
       [
-        "A little room\nfor reflection.",
-        "Dasha was an exploration of astrology and daily reflection."
+        "Ask your AI\nabout your chart.",
+        "Dasha.fm gives ChatGPT and Claude exact Vedic chart data, so the answer starts from the real sky."
       ],
       [
-        "Some projects\nchange direction.",
-        "The astrology app is now retired. That is part of its story, too."
+        "Good at reading.\nBad at casting.",
+        "AI can interpret a chart, but it guesses the math. Dasha.fm does the calculating. Your assistant does the talking."
       ],
       [
-        "Still curious.\nStill making.",
-        "Today, the site points to Out Loud: one thoughtful question and a minute to answer it aloud. A smaller experiment in reflection."
+        "Now, officially,\nin ChatGPT.",
+        "Dasha.fm is an official plugin in ChatGPT. It works with Claude, too."
       ]
     ],
-    "hidden": true
+    "description": "Give ChatGPT and Claude real Vedic chart data."
   },
   {
     "id": "scrubber",

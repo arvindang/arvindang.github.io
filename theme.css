@@ -30,6 +30,8 @@
   --murmur-ink:#35294c;
   --tufte-bg:#ebeadf;
   --tufte-ink:#31342b;
+  --dasha-bg:#ecd2cd;
+  --dasha-ink:#4a2b36;
   --scrubber-bg:#f3cd44;
   --scrubber-ink:#342919;
 }
@@ -64,6 +66,8 @@
     --murmur-ink:#ded2fb;
     --tufte-bg:#2b3028;
     --tufte-ink:#e5e8d8;
+    --dasha-bg:#3a2530;
+    --dasha-ink:#f3d3d6;
     --scrubber-bg:#352e1b;
     --scrubber-ink:#f4d773;
   }
@@ -98,6 +102,8 @@
   --murmur-ink:#ded2fb;
   --tufte-bg:#2b3028;
   --tufte-ink:#e5e8d8;
+  --dasha-bg:#3a2530;
+  --dasha-ink:#f3d3d6;
   --scrubber-bg:#352e1b;
   --scrubber-ink:#f4d773;
 }
