@@ -31,11 +31,13 @@ const shapes={};
 for(const ch in data.glyphs) shapes[ch]=data.glyphs[ch].map(subdivide);
 
 const svg=document.createElementNS(SVG,'svg');
+// Inline styles so a stale cached stylesheet can't leave the overlay unpositioned.
 svg.setAttribute('class','title-glyphs');
 svg.setAttribute('aria-hidden','true');
+svg.style.cssText='position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;fill:currentColor';
 const bodyPath=document.createElementNS(SVG,'path');
 const accentPath=document.createElementNS(SVG,'path');
-accentPath.setAttribute('class','title-accent');
+accentPath.style.fill='#e83262';
 svg.append(bodyPath,accentPath);
 
 let rest,pos,vel,contours=[],radius=60,raf=0,last=0,ready=false;
@@ -127,7 +129,8 @@ for(const type of ['pointerleave','pointercancel']) title.addEventListener(type,
 function rebuild() {
   cancelAnimationFrame(raf); raf=0; pointer.active=false;
   ready=layout();
-  title.classList.toggle('is-blobby',ready);
+  title.style.position='relative';
+  textRoot.style.setProperty('-webkit-text-fill-color',ready?'transparent':'');
   if(ready) {if(!svg.isConnected) title.append(svg); render();}
   else svg.remove();
 }
