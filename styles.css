@@ -95,3 +95,11 @@
   .visit-links .visit-link {min-height:36px}
   :root:not(.enhanced) .visit-links {margin-left:0;padding-left:0;align-items:flex-start}
 }
+
+.hero h1 {position:relative;font-variant-ligatures:none;font-feature-settings:"calt" 0}
+.title-glyphs {position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;fill:currentColor}
+.title-glyphs .title-accent {fill:#e83262}
+.hero h1.is-blobby .title-text {-webkit-text-fill-color:transparent}
+@media (max-width:700px) {
+  .hero h1 {font-size:min(87px,calc((100vw - 50px) / 6.3))}
+}
